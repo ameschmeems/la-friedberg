@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+
+\newtheorem{theorem}{Theorem}
+
+\newtheorem*{definition}{Definition}
+
+\begin{document}
+
+\section{Introduction}
+
+The algebraic descriptions of vector addition and scalar multiplication for vectors in a plane yield the following properties:
+\begin{enumerate}
+	\item For all vectors \textit{x} and \textit{y}, $x + y = y + x$.
+	\item For all vectors \textit{x}, \textit{y}, and \textit{z}, $(x + y) + z = x + (y + z)$.
+	\item There exists a vector denoted \textit{0} such that $x + \textit{0} = x$ for each vector \textit{x}.
+	\item For each vector \textit{x} there is a vector \textit{y} such that $x + y = \textit{0}$.
+	\item For each vector \textit{x}, $1x = x$.
+	\item For each pair of real numbers \textit{a} and \textit{b} and each vector \textit{x}, $(ab)x = a(bx)$.
+	\item For each real number \textit{a} and each pair of vectors \textit{x} and \textit{y}, $a(x + y) = ax + ay$.
+	\item For each pair of real numbers \textit{a} and \textit{b} and each vector \textit{x}, $(a + b)x = ax + bx$.	
+\end{enumerate}
+
+Any mathematical structure possessing these eight properties is called a \textit{vector space}.
+
+\section{Vector Spaces}
+
+\begin{definition}
+	A \textbf{vector space} (or \textbf{linear space}) \textbf{\textup{V}} over a field F consists of a set on which two operations (called \textbf{addition} and \textbf{scalar multiplication}, respectively) are defined so that for each pair of elements x, y, in \textbf{\textup{V}} there is a unique element $x + y$ in \textbf{\textup{V}}, and for each element a in F and each element x in \textbf{\textup{V}} there is a unique element ax in \textbf{\textup{V}}, such that the following conditions hold:
+	\begin{enumerate}
+		\setlength{\itemindent}{.3in}
+		\item[(VS 1)] For all x, y in \textbf{\textup{V}}, $x + y = y + x$ (commutativity of addition).
+		\item[(VS 2)] For all x, y, z in \textbf{\textup{V}}, $(x + y) + z = x + (y + z)$ (associativity of addition).
+		\item[(VS 3)] There exists an element in \textbf{\textup{V}} denoted by 0 such that $x + \textit{0} = x$ for each x in \textbf{\textup{V}}.
+		\item[(VS 4)] For each element x in \textbf{\textup{V}} there exists and element y in \textbf{\textup{V}} such that $x + y = \textit{0}$.
+		\item[(VS 5)] For each element x in \textbf{\textup{V}}, $1x = x$.
+		\item[(VS 6)] For each pair of elements a, b in F and each element x in \textbf{\textup{V}}, $(ab)x = a(bx)$.
+		\item[(VS 7)] For each element a in F and each pair of elements x, y in \textbf{\textup{V}}, $a(x + y) = ax + ay$.
+		\item[(VS 8)] For each pair of elements a, b in F and each element x in \textbf{\textup{V}}, $(a + b)x = ax + bx$.
+	\end{enumerate}
+	The elements x + y and ax are called the \textbf{sum} of x and y and the \textbf{product} of a and x, respectively.
+\end{definition}
+
+The elements of the field \textit{F} are called \textbf{scalars} and the elements of the vector space \textbf{V} are called \textbf{vectors}.
+
+An object of the form $(a_1, a_2, ..., a_n)$ where the entries $a_1, a_2, ..., a_n$ are elements of a field \textit{F}, is called an \textbf{$n$-tuple} with entries from \textit{F}. The elements $a_1, a_2, ..., a_n$ are called the \textbf{entries} or \textbf{components} of the $n$-tuple. Two $n$-tuples $(a_1, a_2, ..., a_n)$ and $(b_1, b_2, ..., b_n)$ are called \textbf{equal} if $a_i = b_i$ for $i = 1, 2, ..., n$.
+
+An $m \times n$ \textbf{matrix} with entries from a field \textit{F} is a rectangular array of the form
+\[\begin{bmatrix}
+	a_{11} & a_{12} & \hdots & a_{1n} \\
+	a_{21} & a_{22} & \hdots & a_{2n} \\
+	\vdots & \vdots & & \vdots \\
+	a_{m1} & a_{m2} & \hdots & a_{mn}
+\end{bmatrix}\]
+where each entry $a_{ij}$ is an element of \textit{F}. We call the entries $a_{ij}$ with $i = j$ the \textbf{diagonal entries} of the matrix.
+
+The $m \times n$ matrix in which each entry equals zero is called the \textbf{zero matrix} and is denoted by \textit{O}.
+
+If the number of rows and columns of a matrix are equal, the matrix is called \textbf{square}.
+
+A \textbf{polynomial} with coefficients from a field \textit{F} is an expression of the form \[f(x) = a_nx^n + a_{n-1}x^{n-1} + \hdots + a_1x + a_0,\] where $n$ is a nonnegative integer and each $a_k$, called the \textbf{coefficient} of $x^k$, is in \textit{F}. If $f(x) = 0$, then $f(x)$ is called the \textbf{zero polynomial} and, for convenience, its degree is defined to be $-1$; otherwise, the \textbf{degree} of a polynomial is defined to be the largest exponent of $x$ that appears in the representation with a nonzero coefficient.
+
+\begin{theorem}[\textbf{Cancellation Law for Vector Addition}]
+	If $x$, $y$, and $z$ are vectors in a vector space \textbf{\textup{V}} such that $x + z = y + z$ then $x = y$.
+\end{theorem}
+
+The vector \textit{0} in (VS 3) is called the \textbf{zero vector} of \textbf{V}, and the vector $y$ in (VS 4) is called the \textbf{additive inverse} of $x$ and is denoted by $-x$.
+
+\begin{theorem}
+	In any vector space \textbf{\textup{V}}, the following statements are true:
+	\begin{enumerate}
+		\item[(a)] $0x = 0$ for each $x\in\textbf{\textup{V}}$.
+		\item[(b)] $(-a)x = -(ax) = a(-x)$ for each $a\in F$ and each $x\in\textbf{\textup{V}}$.
+		\item[(c)] $a\textit{0} = \textit{0}$ for each $a\in F$.
+	\end{enumerate}
+\end{theorem}
+
+\pagebreak
+\subsection*{Exercises}
+\subsubsection*{1. Label the following statements as true or false.}
+\begin{enumerate}
+	\item[(a)] Every vector space contains a zero vector - \textbf{True}.
+	\item[(b)] A vector space may have more than one zero vector - \textbf{False}.
+	\item[(c)] In any vector space, $ax = bx$ implies that $a = b$ - \textbf{False}.
+	\item[(d)] In any vector space, $ax = ay$ implies that $x = y$ - \textbf{True}.
+	\item[(e)] A vector in $F^n$ may be regarded as a matrix in $M_{n\times 1}(F)$ - \textbf{True}.
+	\item[(f)] An $m \times n$ matrix has $m$ columns and $n$ rows - \textbf{False}.
+	\item[(g)] In $P(F)$, only polynomials of the same degree may be added - \textbf{False}.
+	\item[(h)] If $f$ and $g$ are polynomials of degree $n$, then $f + g$ is a polynomial of degree $n$ - \textbf{False}.
+	\item[(i)] If $f$ is a polynomial of degree $n$ and $c$ is a nonzero scalar, then $cf$ is a polynomial of degree $n$ - \textbf{True}.
+	\item[(j)] A nonzero scalar of \textit{F} may be considered to be a polynomial in $P(F)$ having degree zero - \textbf{True}.
+	\item[(k)] Two functions in $\mathcal{F}(S, F)$ are equal if and only if the have the same value at each element of $S$ - \textbf{True}.
+\end{enumerate}
+
+\subsubsection*{2. Write the zero vector of $M_{3 \times 4}(F)$.}
+\[\begin{bmatrix}
+	0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 0
+\end{bmatrix}\]
+
+\end{document}
