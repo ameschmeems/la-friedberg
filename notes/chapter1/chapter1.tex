@@ -81,16 +81,36 @@ The vector \textit{0} in (VS 3) is called the \textbf{zero vector} of \textbf{V}
 \subsubsection*{1. Label the following statements as true or false.}
 \begin{enumerate}
 	\item[(a)] Every vector space contains a zero vector - \textbf{True}.
+	
+	It is included in the definition of a vector space (VS 3).
 	\item[(b)] A vector space may have more than one zero vector - \textbf{False}.
+	
+	Suppose there were two such vectors, $x$ and $y$, and one nonzero vector $z$. Then $x + z = z = y + z$, and $x + (z + (-z)) = x = y + (z + (-z)) = y$. 
 	\item[(c)] In any vector space, $ax = bx$ implies that $a = b$ - \textbf{False}.
-	\item[(d)] In any vector space, $ax = ay$ implies that $x = y$ - \textbf{True}.
+	
+	Consider $x = \textit{0}$ but $a \ne b$.
+	\item[(d)] In any vector space, $ax = ay$ implies that $x = y$ - \textbf{False}.
+	
+	Consider $a = 0$ but $x \ne y$.
 	\item[(e)] A vector in $F^n$ may be regarded as a matrix in $M_{n\times 1}(F)$ - \textbf{True}.
 	\item[(f)] An $m \times n$ matrix has $m$ columns and $n$ rows - \textbf{False}.
+	
+	An $m \times n$ matrix has $m$ rows and $n$ columns.
 	\item[(g)] In $P(F)$, only polynomials of the same degree may be added - \textbf{False}.
+	
+	Not true based on the definition of addition in $P(F)$.
 	\item[(h)] If $f$ and $g$ are polynomials of degree $n$, then $f + g$ is a polynomial of degree $n$ - \textbf{False}.
+	
+	Consider $x$ and $-x$.
 	\item[(i)] If $f$ is a polynomial of degree $n$ and $c$ is a nonzero scalar, then $cf$ is a polynomial of degree $n$ - \textbf{True}.
+	
+	Follows from definition of scalar multiplication in $P(F)$.
 	\item[(j)] A nonzero scalar of \textit{F} may be considered to be a polynomial in $P(F)$ having degree zero - \textbf{True}.
+	
+	If $a$ is a nonzero scalar, it can be expressed as $ax^0$.
 	\item[(k)] Two functions in $\mathcal{F}(S, F)$ are equal if and only if the have the same value at each element of $S$ - \textbf{True}.
+	
+	By definition, two functions $f$, $g$ in $\mathcal{F}(S, F)$ are equal when $f(x) = g(x)$ for each $x$ in F.
 \end{enumerate}
 
 \subsubsection*{2. Write the zero vector of $M_{3 \times 4}(F)$.}
