@@ -1,6 +1,7 @@
 #ifndef Z_P_HPP
 # define Z_P_HPP
 
+#include <iostream>
 #include <stdexcept>
 
 class Z_p
@@ -19,6 +20,8 @@ public:
 	Z_p operator/(const Z_p &rhs) const;
 	bool operator==(const Z_p &rhs) const;
 	bool operator!=(const Z_p &rhs) const;
+
+	friend std::ostream &operator<<(std::ostream &os, const Z_p &rhs);
 
 	class PNotEqualException : public std::exception
 	{

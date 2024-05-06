@@ -13,3 +13,4 @@ macro(package_add_test TESTNAME)
 endmacro()
 
 add_subdirectory(fields)
+package_add_test(Matrix MatrixTest.cpp)

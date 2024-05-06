@@ -60,3 +60,9 @@ bool Fraction::operator!=(const Fraction &rhs) const
 {
 	return !(*this == rhs);
 }
+
+std::ostream& operator<<(std::ostream& os, const Fraction &rhs)
+{
+	os << rhs._num << "/" << rhs._denom;
+	return os;
+}

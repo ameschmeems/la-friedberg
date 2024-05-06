@@ -1,6 +1,8 @@
 #ifndef COMPLEX_HPP
 # define COMPLEX_HPP
 
+#include <iostream>
+
 class Complex
 {
 public:
@@ -17,6 +19,8 @@ public:
 	Complex operator/(const Complex &rhs) const;
 	bool operator==(const Complex &rhs) const;
 	bool operator!=(const Complex &rhs) const;
+
+	friend std::ostream &operator<<(std::ostream &os, const Complex &rhs);
 
 private:
 

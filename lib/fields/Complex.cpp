@@ -56,3 +56,9 @@ bool Complex::operator!=(const Complex &rhs) const
 {
 	return !(*this == rhs);
 }
+
+std::ostream &operator<<(std::ostream &os, const Complex &rhs)
+{
+	os << rhs._real << " + " << rhs._i << "i";
+	return os;
+}

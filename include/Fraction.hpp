@@ -2,6 +2,7 @@
 # define FRACTION_HPP
 
 #include <stdexcept>
+#include <iostream>
 
 class Fraction
 {
@@ -19,6 +20,8 @@ public:
 	Fraction operator/(const Fraction &rhs) const;
 	bool operator==(const Fraction &rhs) const;
 	bool operator!=(const Fraction &rhs) const;
+
+	friend std::ostream& operator<<(std::ostream& os, const Fraction &rhs);
 
 	class ZeroDenominatorException : public std::exception
 	{

@@ -1,6 +1,8 @@
 #ifndef REAL_HPP
 # define REAL_HPP
 
+#include <iostream>
+
 class Real
 {
 public:
@@ -17,6 +19,8 @@ public:
 	Real operator/(const Real &rhs) const;
 	bool operator==(const Real &rhs) const;
 	bool operator!=(const Real &rhs) const;
+
+	friend std::ostream &operator<<(std::ostream &os, const Real &rhs);
 
 private:
 

@@ -48,3 +48,9 @@ bool Real::operator!=(const Real &rhs) const
 {
 	return !(*this == rhs);
 }
+
+std::ostream &operator<<(std::ostream &os, const Real &rhs)
+{
+	os << rhs._num;
+	return os;
+}
