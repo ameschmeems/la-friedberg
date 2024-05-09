@@ -89,6 +89,11 @@ bool Z_p::operator!=(const Z_p &rhs) const
 	return !(*this == rhs);
 }
 
+bool Z_p::is_zero() const
+{
+	return _val == 0;
+}
+
 std::ostream &operator<<(std::ostream &os, const Z_p &rhs)
 {
 	os << rhs._val % rhs._p;

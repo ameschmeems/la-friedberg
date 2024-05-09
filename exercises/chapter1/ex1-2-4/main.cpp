@@ -1,5 +1,6 @@
 #include <iostream>
-#include <Matrix.hpp>
+#include "Matrix.hpp"
+#include "Polynomial.hpp"
 
 int main()
 {
@@ -84,6 +85,42 @@ int main()
 		std::cout << "=" << std::endl;
 		(-5.0f * m).print(std::cout);
 		std::cout << std::endl;
+		std::cout << "---------------" << std::endl;
+		std::cout << std::endl;
+	}
+	// (e)
+	{
+		std::vector<int> avec { 3, 4, 0, -7, 2 };
+		Polynomial<int> a { avec };
+		std::vector<int> bvec { 7, -6, 2, 8 };
+		Polynomial<int> b { bvec };
+		std::cout << a << " + " << b << " = " << a + b << std::endl;
+		std::cout << "---------------" << std::endl;
+		std::cout << std::endl;
+	}
+	// (f)
+	{
+		std::vector<int> avec { -6, 8, 7, -3 };
+		Polynomial<int> a { avec };
+		std::vector<int> bvec { 10, -8, 0, 2 };
+		Polynomial<int> b { bvec };
+		std::cout << a << " + " << b << " = " << a + b << std::endl;
+		std::cout << "---------------" << std::endl;
+		std::cout << std::endl;
+	}
+	// (g)
+	{
+		std::vector<int> avec { -3, 0, 8, 0, -6, 0, 0, 2 };
+		Polynomial<int> a { avec };
+		std::cout << a << " * 5 = " << a * 5 << std::endl;
+		std::cout << "---------------" << std::endl;
+		std::cout << std::endl;
+	}
+	// (h)
+	{
+		std::vector<int> avec { 2, 4, 0, -2, 0, 1 };
+		Polynomial<int> a { avec };
+		std::cout << a << " * 3 = " << a * 3 << std::endl;
 		std::cout << "---------------" << std::endl;
 		std::cout << std::endl;
 	}

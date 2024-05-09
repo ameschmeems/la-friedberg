@@ -21,6 +21,8 @@ public:
 	bool operator==(const Fraction &rhs) const;
 	bool operator!=(const Fraction &rhs) const;
 
+	bool is_zero() const;
+
 	friend std::ostream& operator<<(std::ostream& os, const Fraction &rhs);
 
 	class ZeroDenominatorException : public std::exception

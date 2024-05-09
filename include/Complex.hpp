@@ -20,6 +20,8 @@ public:
 	bool operator==(const Complex &rhs) const;
 	bool operator!=(const Complex &rhs) const;
 
+	bool is_zero() const;
+
 	friend std::ostream &operator<<(std::ostream &os, const Complex &rhs);
 
 private:

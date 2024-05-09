@@ -49,6 +49,11 @@ bool Real::operator!=(const Real &rhs) const
 	return !(*this == rhs);
 }
 
+bool Real::is_zero() const
+{
+	return _num == 0;
+}
+
 std::ostream &operator<<(std::ostream &os, const Real &rhs)
 {
 	os << rhs._num;

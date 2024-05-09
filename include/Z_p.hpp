@@ -21,6 +21,8 @@ public:
 	bool operator==(const Z_p &rhs) const;
 	bool operator!=(const Z_p &rhs) const;
 
+	bool is_zero() const;
+
 	friend std::ostream &operator<<(std::ostream &os, const Z_p &rhs);
 
 	class PNotEqualException : public std::exception

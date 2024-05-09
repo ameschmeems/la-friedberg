@@ -14,3 +14,4 @@ endmacro()
 
 add_subdirectory(fields)
 package_add_test(Matrix MatrixTest.cpp)
+package_add_test(Polynomial PolynomialTest.cpp)

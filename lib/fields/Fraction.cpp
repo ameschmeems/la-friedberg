@@ -67,6 +67,11 @@ bool Fraction::operator!=(const Fraction &rhs) const
 	return !(*this == rhs);
 }
 
+bool Fraction::is_zero() const
+{
+	return _num == 0;
+}
+
 std::ostream &operator<<(std::ostream& os, const Fraction &rhs)
 {
 	os << rhs._num << "/" << rhs._denom;
