@@ -6,7 +6,7 @@
 
 template<
 	typename T,
-	bool integral = std::is_arithmetic<T>::value
+	bool arithmetic = std::is_arithmetic<T>::value
 >
 class Polynomial;
 
