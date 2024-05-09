@@ -28,9 +28,19 @@ public:
 		const char *what() const throw();
 	};
 
+	class PNotPrimeException : public std::exception
+	{
+		const char *what() const throw();
+	};
+
+	class DivisionByZeroException : public std::exception
+	{
+		const char *what() const throw();
+	};
+
 private:
 
-	int _p { 1 };
+	int _p { 2 };
 	int _val {};
 };
 

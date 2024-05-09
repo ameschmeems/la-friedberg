@@ -1,4 +1,5 @@
 #include "Fraction.hpp"
+#include "utils.hpp"
 
 const char *Fraction::ZeroDenominatorException::what() const throw()
 {
@@ -12,7 +13,12 @@ Fraction::Fraction(const Fraction &rhs) : _num { rhs._num }, _denom { rhs._denom
 Fraction::Fraction(const int numerator, const int denominator) : _num { numerator }, _denom { denominator }
 {
 	if (_denom == 0)
-		throw new ZeroDenominatorException();
+		throw ZeroDenominatorException();
+	int u {};
+	int v {};
+	int g { bezout_algorithm(_num, _denom, u, v) };
+	_num /= g;
+	_denom /= g;
 }
 
 Fraction &Fraction::operator=(const Fraction &rhs)
@@ -51,8 +57,8 @@ Fraction Fraction::operator/(const Fraction &rhs) const
 
 bool Fraction::operator==(const Fraction &rhs) const
 {
-	float left { static_cast<float>(_num) / _denom };
-	float right { static_cast<float>(rhs._num) / rhs._denom };
+	int left { _num * rhs._denom };
+	int right { _denom * rhs._num };
 	return left == right;
 }
 
@@ -61,7 +67,7 @@ bool Fraction::operator!=(const Fraction &rhs) const
 	return !(*this == rhs);
 }
 
-std::ostream& operator<<(std::ostream& os, const Fraction &rhs)
+std::ostream &operator<<(std::ostream& os, const Fraction &rhs)
 {
 	os << rhs._num << "/" << rhs._denom;
 	return os;

@@ -70,7 +70,7 @@ public:
 		return Matrix { temp };
 	}
 
-	Matrix operator*(const T rhs) const
+	Matrix operator*(const T &rhs) const
 	{
 		std::array<std::array<T, m>, n> temp {};
 		for (int i = 0; i < m; i++)
@@ -81,7 +81,7 @@ public:
 		return Matrix { temp };
 	}
 
-	Matrix operator/(const T rhs) const
+	Matrix operator/(const T &rhs) const
 	{
 		std::array<std::array<T, m>, n> temp {};
 		for (int i = 0; i < m; i++)

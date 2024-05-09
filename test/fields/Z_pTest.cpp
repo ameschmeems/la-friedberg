@@ -37,9 +37,9 @@ TEST(Z_p, multiplication)
 
 TEST(Z_p, division)
 {
-	Z_p a { 2, 4 };
-	Z_p b { 2, 2 };
-	Z_p result { 2, 0 };
+	Z_p a { 5, 1 };
+	Z_p b { 5, 3 };
+	Z_p result { 5, 2 };
 
 	ASSERT_EQ(a / b, result);
 }
