@@ -5,6 +5,7 @@
 \newtheorem{theorem}{Theorem}
 
 \newtheorem*{definition}{Definition}
+\newtheorem*{corollary}{Corollary}
 
 \begin{document}
 
@@ -119,5 +120,54 @@ The vector \textit{0} in (VS 3) is called the \textbf{zero vector} of \textbf{V}
 	0 & 0 & 0 & 0 \\
 	0 & 0 & 0 & 0
 \end{bmatrix}\]
+
+\subsubsection*{8. In any vector space \textbf{V}, show that $(a + b)(x + y) = ax + ay + bx + by$ for any $x, y \in \textbf{\textup{V}}$ and any $a, b \in F$.}
+$(a + b)(x + y) = (a + b)x + (a + b)y = ax + bx + ay + by$.
+
+\subsubsection*{9. Prove Corollaries 1 and 2 of Theorem 1.1 and Theorem 1.2(c).}
+\begin{corollary}
+	The vector 0 described in (VS 3) is unique.
+\end{corollary}
+\begin{proof}
+	Suppose that there are vectors $x, y, z \in \textbf{\textup{V}}$ such that $x + z = y + z = z$. Then $x = x + 0 = x + (z + (-z)) = (x + z) + (-z) = (y + z) + (-z) = y + (z + (-z)) = y + 0 = y$.
+\end{proof}
+\begin{corollary}
+	The vector y described in (VS 4) is unique.
+\end{corollary}
+\begin{proof}
+	Suppose that there are vectors $x, y, z \in \textbf{\textup{V}}$ such that $x + y = x + z = 0$. Then $y = 0 + y = x + (-x) + y = (x + y) + (-x) = (x + z) + (-x) = x + (-x) + z = 0 + z = z$.
+\end{proof}
+
+\subsubsection*{11. Let $\textbf{\textup{V}} = \{\textit{0}\}$ consist of a single vector \textit{0} and define $\textit{0} + \textit{0} = \textit{0}$ nad $c\textit{0} = \textit{0}$ for each scalar $c$ in $F$. Prove that \textbf{V} is a vector space over $F$. (\textbf{V} is called the \textbf{zero vector space}.)}
+\begin{proof}
+	For any $x,y,z \in \textbf{\textup{V}}$ and $a,b \in F$:
+	\begin{enumerate}
+		\item $x + y = 0 + 0 = y + x$ (VS 1)
+		\item $(x + y) + z = (0 + 0) + 0 = 0 + (0 + 0) = x + (y + z)$ (VS 2)
+		\item $x + 0 = 0 + 0 = 0 = x$ (VS 3)
+		\item $x + y = 0 + 0 = 0$ (VS 4)
+		\item $1x = 1 \times 0 = 0 = x$ (VS 5)
+		\item $(ab)x = (ab) \times 0 = 0 = a (b \times 0) = a(bx)$ (VS 6)
+		\item $a(x + y) = a(0 + 0) = 0 + 0 = a \times 0 + a \times 0 = ax + ay$ (VS 7)
+		\item $(a + b)x = (a + b) \times 0 = 0 = 0 + 0 = a \times 0 + b \times 0 = ax + bx$ (VS 8)
+	\end{enumerate}
+	Therefore \textbf{V} satisfies all conditions necessary for it to be a vector space.
+\end{proof}
+
+\pagebreak
+
+\subsubsection*{13. Let \textbf{V} denote the set of ordered pairs of real numbers. If $(a_1, a_2)$ and $(b_1, b_2)$ are elements of \textbf{V} and $c \in R$, define \[(a_1, a_2) + (b_1, b_2) = (a_1 + b_1, a_2b_2)\] and \[c(a_1, a_2) = (ca_1, a_2).\] Is \textbf{V} a a vector space over $R$ with these operations?}
+\begin{proof}
+	Let $(x_1, x_2) \in \textbf{\textup{V}}$ and $a,b \in R$. Then \[(a + b)(x_1, x_2) = ((a + b)x_1, x_2) = (ax_1 + bx_1, x_2)\]and \[a(x_1, x_2) + b(x_1, x_2) = (ax_1, x_2) + (bx_1, x_2) = (ax_1 + bx_1, x_2^2)\]so \[(a + b)(x_1, x_2) \ne a(x_1, x_2) + b(x_1, x_2)\]so \textbf{V} is not a vector space over $R$.
+\end{proof}
+
+% \item $(x_1,x_2) + (y_1, y_2) = (x_1 + y_1, x_2y_2) = (y_1 + x_1, y_2,x_2) = (y_1, y_2) + (x_1, x_2)$ (VS 1)
+% 		\item $((x_1, x_2) + (y_1, y_2)) + (z_1, z_2) = (x_1 + y_1, x_2y_2) + (z_1,z_2) = ((x_1 + y_1) + z_ 1, (x_2y_2)z_2) = (x_1 + y_1 + z_ 1, x_2y_2z_2) = (x_1 + (y_1 + z_ 1), x_2(y_2z_2)) = (x_1, x_2) + (y_1 + z_1, y_2z_2) = (x_1, x_2) + ((y_1, y_2) + (z_1, z_2))$ (VS 2)
+% 		\item If $\textit{0} = (0, 1)$ then $(x_1, x_2) + \textit{0} = (x_1 + 0, 1x_1) = (x_1, x_2)$ (VS 3)
+% 		\item $(x_1, x_2) + (-x_1, \frac{1}{x_2}) = (x_1 + (-x_1), x_2 \times \frac{1}{x2}) = (0, 1) = \textit{0}$ (VS 4)
+% 		\item $1(x_1, x_2) = (1x_1, x_2) = *(x_1, x_2)$ (VS 5)
+% 		\item $(ab)(x_1, x_2) = (abx_1, x_2) = (a(bx_1), x_2) = a(bx_1, x_2) = a(b(x_1, x_2))$ (VS 6)
+% 		\item $a((x_1, x_2) + (y_1, y_2)) = a(x_1 + y_1, x_2y_2) = (a(x_1 + y_1), x_2y_2) = (ax_1 + ay_1, x_2y_2) = (ax_1, x_2) + (ay_1, y_2) = a(x_1, x_2) + a(y_1, y_2)$ (VS 7)
+% 		\item $(a + b)(x_1, x_2) = ((a + b)x_1, x_2)$
 
 \end{document}
