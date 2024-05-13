@@ -1,5 +1,4 @@
-#ifndef POLYNOMIAL_HPP
-# define POLYNOMIAL_HPP
+#pragma once
 
 #include <vector>
 #include <iostream>
@@ -303,5 +302,3 @@ Polynomial<T> operator*(T i, const Polynomial<T> &rhs)
 {
 	return rhs * i;
 }
-
-#endif

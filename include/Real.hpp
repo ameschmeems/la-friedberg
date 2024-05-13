@@ -1,5 +1,4 @@
-#ifndef REAL_HPP
-# define REAL_HPP
+#pragma once
 
 #include <iostream>
 
@@ -28,5 +27,3 @@ private:
 
 	float _num {};
 };
-
-#endif

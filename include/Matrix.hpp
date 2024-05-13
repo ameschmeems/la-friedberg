@@ -1,9 +1,9 @@
-#ifndef MATRIX_HPP
-# define MATRIX_HPP
+#pragma once
 
 #include <array>
 #include <iostream>
 
+/// An m by n matrix over field T
 template<typename T, std::size_t m, std::size_t n>
 class Matrix
 {
@@ -30,11 +30,13 @@ public:
 	Matrix &operator=(const Matrix &rhs)
 	{
 		_mat = rhs._mat;
+		return *this;
 	}
 	
 	Matrix &operator=(Matrix &&rhs) noexcept
 	{
 		_mat = std::move(rhs._mat);
+		return *this;
 	}
 
 	Matrix operator+(const Matrix &rhs) const
@@ -132,5 +134,3 @@ Matrix<T, m, n> operator*(T i, const Matrix<T, m, n> &rhs)
 {
 	return rhs * i;
 }
-
-#endif

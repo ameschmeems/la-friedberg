@@ -57,19 +57,19 @@ TEST(Matrix, negation)
 
 TEST(Matrix, scalarMultiplication)
 {
-	Matrix<Real, 2, 2> m {};
+	Matrix<float, 2, 2> m {};
 	m[0][0] = 1;
 	m[0][1] = 2;
 	m[1][0] = 3;
 	m[1][1] = 4;
-	Matrix<Real, 2, 2> result {};
+	Matrix<float, 2, 2> result {};
 	result[0][0] = 2;
 	result[0][1] = 4;
 	result[1][0] = 6;
 	result[1][1] = 8;
 
-	ASSERT_EQ(Real { 2 } * m, result);
-	ASSERT_EQ(m * Real { 2 }, result);
+	ASSERT_EQ(2.0f * m, result);
+	ASSERT_EQ(m * 2, result);
 }
 
 TEST(Matrix, scalarDivision)

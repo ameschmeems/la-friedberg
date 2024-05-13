@@ -161,13 +161,14 @@ $(a + b)(x + y) = (a + b)x + (a + b)y = ax + bx + ay + by$.
 	Let $(x_1, x_2) \in \textbf{\textup{V}}$ and $a,b \in R$. Then \[(a + b)(x_1, x_2) = ((a + b)x_1, x_2) = (ax_1 + bx_1, x_2)\]and \[a(x_1, x_2) + b(x_1, x_2) = (ax_1, x_2) + (bx_1, x_2) = (ax_1 + bx_1, x_2^2)\]so \[(a + b)(x_1, x_2) \ne a(x_1, x_2) + b(x_1, x_2)\]so \textbf{V} is not a vector space over $R$.
 \end{proof}
 
-% \item $(x_1,x_2) + (y_1, y_2) = (x_1 + y_1, x_2y_2) = (y_1 + x_1, y_2,x_2) = (y_1, y_2) + (x_1, x_2)$ (VS 1)
-% 		\item $((x_1, x_2) + (y_1, y_2)) + (z_1, z_2) = (x_1 + y_1, x_2y_2) + (z_1,z_2) = ((x_1 + y_1) + z_ 1, (x_2y_2)z_2) = (x_1 + y_1 + z_ 1, x_2y_2z_2) = (x_1 + (y_1 + z_ 1), x_2(y_2z_2)) = (x_1, x_2) + (y_1 + z_1, y_2z_2) = (x_1, x_2) + ((y_1, y_2) + (z_1, z_2))$ (VS 2)
-% 		\item If $\textit{0} = (0, 1)$ then $(x_1, x_2) + \textit{0} = (x_1 + 0, 1x_1) = (x_1, x_2)$ (VS 3)
-% 		\item $(x_1, x_2) + (-x_1, \frac{1}{x_2}) = (x_1 + (-x_1), x_2 \times \frac{1}{x2}) = (0, 1) = \textit{0}$ (VS 4)
-% 		\item $1(x_1, x_2) = (1x_1, x_2) = *(x_1, x_2)$ (VS 5)
-% 		\item $(ab)(x_1, x_2) = (abx_1, x_2) = (a(bx_1), x_2) = a(bx_1, x_2) = a(b(x_1, x_2))$ (VS 6)
-% 		\item $a((x_1, x_2) + (y_1, y_2)) = a(x_1 + y_1, x_2y_2) = (a(x_1 + y_1), x_2y_2) = (ax_1 + ay_1, x_2y_2) = (ax_1, x_2) + (ay_1, y_2) = a(x_1, x_2) + a(y_1, y_2)$ (VS 7)
-% 		\item $(a + b)(x_1, x_2) = ((a + b)x_1, x_2)$
+\subsubsection*{14. Let $\textbf{\textup{V}} = \{(a_1, a_2, \dots, a_n): a_i \in C \text{ for } i=1,2,\dots,n$\}; so \textbf{V} is a vector space over $C$ by Example 1. Is \textbf{V} a vector space over the field of real numbers with the operations of coordinatewise addition and multiplication?}
+\begin{proof}
+	Notice that any number $x \in R$ can be expressed as $x + 0i$ in $C$, so if \textbf{V} is a vector space over $C$, it is also a vector space over $R$.
+\end{proof}
+
+\subsubsection*{15. Let $\textbf{\textup{V}} = \{(a_1, a_2, \dots, a_n): a_i \in R \text{ for } i=1,2,\dots,n\}$; so \textbf{V} is a vector space over $R$ by Example 1. Is \textbf{V} a vector space over the field of complex numbers with the operations of coordinatewise addition and scalar multiplication?}
+\begin{proof}
+	Consider $c = x + yi$ and $a = (a_1)$ with $y,a_1 \ne 0$. Then $ca = (x + yi)(a_1) = (xa_1 + ya_1i)$, so the entries of ca aren't in $R$, so \textbf{V} is not a vector space over $C$.
+\end{proof}
 
 \end{document}

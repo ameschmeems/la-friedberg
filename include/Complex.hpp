@@ -1,5 +1,4 @@
-#ifndef COMPLEX_HPP
-# define COMPLEX_HPP
+#pragma once
 
 #include <iostream>
 
@@ -29,5 +28,3 @@ private:
 	float _real {};
 	float _i {};
 };
-
-#endif

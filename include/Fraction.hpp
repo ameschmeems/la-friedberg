@@ -1,5 +1,4 @@
-#ifndef FRACTION_HPP
-# define FRACTION_HPP
+#pragma once
 
 #include <stdexcept>
 #include <iostream>
@@ -35,5 +34,3 @@ private:
 	int _num {};
 	int _denom { 1 };
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef Z_P_HPP
-# define Z_P_HPP
+#pragma once
 
 #include <iostream>
 #include <stdexcept>
@@ -45,5 +44,3 @@ private:
 	int _p { 2 };
 	int _val {};
 };
-
-#endif
