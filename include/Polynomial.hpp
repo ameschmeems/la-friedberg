@@ -38,7 +38,11 @@ public:
 	Polynomial(const std::vector<T> &rhs) : _coeffs { rhs }
 	{
 		while (_coeffs[_coeffs.size()-1] == 0)
+		{
 			_coeffs.pop_back();
+			if (_coeffs.size() == 0)
+				break;
+		}
 	}
 
 	/**
@@ -49,7 +53,11 @@ public:
 	Polynomial(std::vector<T> &&rhs) noexcept : _coeffs { std::move(rhs) }
 	{
 		while (_coeffs[_coeffs.size()-1] == 0)
+		{
 			_coeffs.pop_back();
+			if (_coeffs.size() == 0)
+				break;
+		}
 	}
 
 	Polynomial &operator=(const Polynomial &rhs)
@@ -224,7 +232,11 @@ public:
 	Polynomial(const std::vector<T> &rhs) : _coeffs { rhs }
 	{
 		while (_coeffs[_coeffs.size()-1].is_zero())
+		{
 			_coeffs.pop_back();
+			if (_coeffs.size() == 0)
+				break;
+		}
 	}
 
 	/**
@@ -235,7 +247,11 @@ public:
 	Polynomial(std::vector<T> &&rhs) noexcept : _coeffs { std::move(rhs) }
 	{
 		while (_coeffs[_coeffs.size()-1].is_zero())
+		{
 			_coeffs.pop_back();
+			if (_coeffs.size() == 0)
+				break;
+		}
 	}
 
 	Polynomial &operator=(const Polynomial &rhs)

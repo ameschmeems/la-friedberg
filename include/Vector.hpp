@@ -28,6 +28,9 @@ public:
 	{
 	}
 
+	/**
+	 * Initialize object to the contents of given array
+	*/
 	Vector(std::array<T, n> &&rhs) noexcept : _vec { std::move(rhs) }
 	{
 	}
