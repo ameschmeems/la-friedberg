@@ -3,6 +3,9 @@
 #include <iostream>
 #include <stdexcept>
 
+/**
+ * The field of integers mod p
+*/
 class Z_p
 {
 public:

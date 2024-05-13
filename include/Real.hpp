@@ -2,6 +2,9 @@
 
 #include <iostream>
 
+/**
+ * Field of real numbers R
+*/
 class Real
 {
 public:

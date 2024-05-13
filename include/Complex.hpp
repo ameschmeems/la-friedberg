@@ -2,6 +2,9 @@
 
 #include <iostream>
 
+/**
+ * Field of complex numbers C
+*/
 class Complex
 {
 public:

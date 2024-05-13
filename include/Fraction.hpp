@@ -3,6 +3,9 @@
 #include <stdexcept>
 #include <iostream>
 
+/**
+ * Field of rational numbers Q, represented as fractions a/b.
+*/
 class Fraction
 {
 public:
