@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{amsmath, amssymb, amsthm}
 
 \newtheorem{theorem}{Theorem}
@@ -169,6 +170,31 @@ $(a + b)(x + y) = (a + b)x + (a + b)y = ax + bx + ay + by$.
 \subsubsection*{15. Let $\textbf{\textup{V}} = \{(a_1, a_2, \dots, a_n): a_i \in R \text{ for } i=1,2,\dots,n\}$; so \textbf{V} is a vector space over $R$ by Example 1. Is \textbf{V} a vector space over the field of complex numbers with the operations of coordinatewise addition and scalar multiplication?}
 \begin{proof}
 	Consider $c = x + yi$ and $a = (a_1)$ with $y,a_1 \ne 0$. Then $ca = (x + yi)(a_1) = (xa_1 + ya_1i)$, so the entries of ca aren't in $R$, so \textbf{V} is not a vector space over $C$.
+\end{proof}
+
+\subsubsection*{17. Let $\textbf{V} = \{(a_1,a_2):a_1,a_2 \in F\}$, where $F$ is a field. Define the addition of elements of \textbf{V} coordinatewise, and for $c \in F$ and $(a_1,a_2) \in \textbf{V}$, define \[c(a_1, a_2) = (a_1, 0).\] Is \textbf{V} a vector space over $F$ with these operations?}
+\begin{proof}
+	Consider $(a_1,a_2) \in \textbf{\textup{V}}$ with $a_2 \ne 0$. Then $1(a_1, a_2) = (a_1, 0)$, so $1(a_1, a_2) \ne (a_1, a_2)$, therefore \textbf{V} is not a vector space over $F$.
+\end{proof}
+
+\subsubsection*{18. Let $\textbf{\textup{V}} = \{(a_1, a_2):a_1,a_2 \in R\}$. For $(a_1, a_2),(b_1, b_2) \in \textbf{\textup{V}}$ and $c \in R$, define \[(a_1, a_2) + (b_1, b_2) = (a_1 + 2b_1, a_2 + 3b_2) \text{ and } c(a_1, a_2) = (ca_1, ca_2).\] Is \textbf{V} a vector space over $R$ with these operations?}
+\begin{proof}
+	Consider $(a_1, a_2) = (1, 1)$ and $(b_1, b_2) = (2, 2)$. Then $(a_1, a_2) + (b_1, b_2) = (5, 7)$ and $(b_1, b_2) + (a_1, a_2) = (4, 5)$, so $(a_1, a_2) + (b_1, b_2) \ne (b_1, b_2) + (a_1, a_2)$, therefore \textbf{V} is not a vector space over $R$.
+\end{proof}
+
+\subsubsection*{21. Let \textbf{V} and \textbf{W} be vector spaces over a field $F$. Let \[\textbf{\textup{Z}} = \{(v,w):v \in \textbf{\textup{V}} \text{ and } w \in \textbf{\textup{W}}\}.\] Prove that \textbf{Z} is a vector space over $F$ with the operations \[(v_1, w_1) + (v_2, w_2) = (v_1 + v_2, w_1 + w_2) \text{ and } c(v_1, w_1) = (cv_1, cw_1).\]}
+\begin{proof}
+	For $(v_1, w_1), (v_2, w_2), (v_3, w_3) \in \textbf{\textup{Z}}$ and $a,b \in F$
+	\begin{enumerate}
+		\item $(v_1, w_1) + (v_2, w_2) = (v_1 + v_2, w_1 + w_2) = (v_2 + v_1, w_2 + w_1) = (v_2, w_2) + (v_1, w_1)$ (VS 1)
+		\item $((v_1, w_1) + (v_2, w_2)) + (v_3, w_3) = (v_1 + v_2, w_1 + w_2) + (v_3, w_3) = (v_1 + v_2 + v_3, w_1 + w_2 + w_3) = (v_1, w_1) + (v_2 + v_3, w_2 + w_3) = (v_1, w_1) + ((v_2, w_2) + (v_3, w_3))$ (VS 2)
+		\item $(v_1, w_1) + 0 = (v_1, w_1) + (0, 0) = (v_1 + 0, w_1 + 0) = (v_1, w_1)$ (VS 3)
+		\item $(v_1, w_1) + (-v_1, -w_1) = (v_1 - v_1, w_1 - w_1) = (0, 0)$ (VS 4)
+		\item $1(v_1, w_1) = (1v_1, 1w_1) = (v_1, w_1)$ (VS 5)
+		\item $(ab)(v_1, w_1) = (abv_1, abw_1) = a(bv_1, bw_1) = a(b(v_1, w_1))$ (VS 6)
+		\item $a((v_1, w_1) + (v_2, w_2)) = a(v_1 + v_2, w_1 + w_2) = (av_1 + av_2, aw_1 + aw_2) = (av_1, aw_1) + (av_2, aw_2) = a(v_1, w_1) + a(v_2, w_2)$ (VS 7)
+		\item $(a + b)(v_1, w_1) = ((a+b)v_1, (a+b)w_1) = (av_1 + bv_1, aw_1 + bw1) = (av_1, aw_1) + (bv_1, bw_1) = a(v_1, w_1) + b(v_1, w_1)$ (VS 8)
+	\end{enumerate}
 \end{proof}
 
 \end{document}
