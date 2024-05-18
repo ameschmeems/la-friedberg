@@ -2,6 +2,7 @@
 
 #include <array>
 #include <iostream>
+#include <stdexcept>
 
 /**
  * An m by n matrix over field T
@@ -146,7 +147,7 @@ public:
 	}
 
 	/**
-	 * Prints the matrix (multiline)\
+	 * Prints the matrix (multiline)
 	 * @param os	output stream to which matrix should be printed
 	*/
 	void print(std::ostream &os) const
@@ -159,6 +160,50 @@ public:
 			os << "}" << std::endl;
 		}
 	}
+
+	/**
+	 * Returns true if the matrix is square, otherwise false
+	*/
+	bool is_square()
+	{
+		return m == n;
+	}
+
+	/**
+	 * Returns the transposed matrix
+	*/
+	Matrix<T, n, m> transposed()
+	{
+		Matrix<T, n, m> temp {};
+		for (int i = 0; i < m; i++)
+		{
+			for (int j = 0; j < n; j++)
+				temp[i][j] = _mat[j][i];
+		}
+		return std::move(temp);
+	}
+
+	/**
+	 * Returns the trace of the matrix.
+	 * If matrix is not square, throws a MatrixNotSquareException
+	*/
+	T trace()
+	{
+		if (!(this->is_square()))
+			throw MatrixNotSquareException();
+		T temp {};
+		for (int i = 0; i < n; i++)
+			temp += _mat[i][i];
+		return std::move(temp);
+	}
+
+	class MatrixNotSquareException : public std::exception
+	{
+		const char *what() const throw()
+		{
+			return "Matrix is not square";
+		}
+	};
 
 private:
 

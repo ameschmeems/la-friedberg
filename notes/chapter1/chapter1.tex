@@ -197,4 +197,83 @@ $(a + b)(x + y) = (a + b)x + (a + b)y = ax + bx + ay + by$.
 	\end{enumerate}
 \end{proof}
 
+\section{Subspaces}
+\begin{definition}
+	A subset \textbf{\textup{W}} of a vector space \textbf{\textup{V}} over a field $F$ is called a \textbf{subspace} of \textbf{\textup{V}} if \textbf{\textup{W}} is a vector space over $F$ with the operations of addition and scalar multiplication defined on \textbf{\textup{V}}.
+\end{definition}
+
+\begin{theorem}
+	Let \textbf{\textup{V}} be a vector space and \textbf{\textup{W}} a subset of \textbf{\textup{V}}. Then \textbf{\textup{W}} is a subspace of \textbf{\textup{V}} if and only if the following three conditions hold for the operations defined in \textbf{\textup{V}}.
+	\begin{enumerate}
+		\item $0 \in \textbf{\textup{W}}$.
+		\item $x + y \in \textbf{\textup{W}}$ whenever $x \in \textbf{\textup{W}}$ and $y \in \textbf{\textup{W}}$.
+		\item $cx \in \textbf{\textup{W}}$ whenever $c \in F$ and $x \in \textbf{\textup{W}}$.
+	\end{enumerate}
+\end{theorem}
+
+The \textbf{transpose} $A^t$ of an $m \times n$ matrix $A$ is the $n \times m$ matrix obtained from $A$ by interchanging the rows with the columns; that is $(A^t)_{ij} = A_{ji}$.
+
+A \textbf{symmetric} matrix is a matrix $A$ such that $A^t = A$.
+
+An $m \times n$ matrix $A$ is called \textbf{upper triangular} if all its entries lying below the diagonal entries are zero, that is, $A_{ij} = 0$ whenever $i > j$. An $n \times n$ matrix $M$ is called a \textbf{diagonal matrix} if $M_{ij} = 0$ whenever $i \ne j$, that is, if all its nondiagonal entries are zero.
+
+The \textbf{trace} of an $n \times n$ matrix $M$, denoted $\text{tr}(M)$, is the sum of diagonal entries of $M$; that is \[ \text{tr}(M) = M_{11} + M_{22} + \dots + M_{nn} \]
+
+\begin{theorem}
+	Any intersection of subspaces of a vector space \textbf{\textup{V}} is a subspace of \textbf{V}.
+\end{theorem}
+
+\subsection*{Exercises}
+\subsubsection*{1. Label the following statements as true or false.}
+\begin{enumerate}
+	\item[(a)] If \textbf{V} is a vector space and \textbf{W} is a subset of \textbf{V} that is a vector space, then \textbf{W} is a subspace of \textbf{V} - \textbf{True}.
+
+	This is the definition of a subspace.
+	\item[(b)] The empty set is a subspace of every vector space - \textbf{False}.
+	
+	The empty set does not contain 0, which is necessary for it to be a subspace.
+	\item[(c)] If \textbf{V} is a vector space other than the zero vector space, then \textbf{V} contains a subspace \textbf{W} such that $\textbf{\textup{W}} \ne \textbf{\textup{V}}$ - \textbf{True}.
+	
+	The zero subspace fulfills this condition.
+	\item[(d)] The intersection of any two subsets of \textbf{V} is a subspace of \textbf{V} - \textbf{False}.
+	
+	If neither subset contains 0, then their intersection can not be a subspace.
+	\item[(e)] An $n \times n$ diagonal matrix can never have more than $n$ nonzero entries - \textbf{True}.
+	
+	All non-diagonal entries of a diagonal matrix are always 0, and an $n \times n$ matrix has $n$ diagonal entries.
+	\item[(f)] The trace of a square matrix is the product of its diagonal entries - \textbf{False}.
+	
+	The trace of a square matrix is the sum of its diagonal entries.
+	\item[(g)] Let \textbf{W} be the $xy$-plane in $R^3$; that is, $\textbf{\textup{W}} = \left\{(a_1, a_2, 0): a_1, a_2 \in R\right\}$. Then $\textbf{\textup{W}} = R^2$ - \textbf{False}.
+	
+	$R^2 = \left\{(a_1, a_2): a_1,a_2 \in R\right\}$, so $\textbf{\textup{W}} \ne R^2$.
+\end{enumerate}
+
+\subsubsection*{3. Prove that $(aA + bB)^t = aA^t + bB^t$ for any $A,B \in \textbf{\textup{M}}_{n \times n}(F)$ and any $a, b \in F$.}
+\begin{proof}
+	\begin{align*}
+		(aA^t + bB^t)_{ij} = {aA^t}_{ij} + {bB^t}_{ij} &= aA_{ji} + bB_{ji} = (aA+bB)_{ji} = {(aA+bB)^t}_{ij},\\& \text{ so } (aA^t + bB^t) = (aA + bB)^t.
+	\end{align*}
+\end{proof}
+
+\subsubsection*{4. Prove that $(A^t)^t = A$ for each $A \in \textbf{\textup{M}}_{m\times n}(F)$.}
+\begin{proof}
+	\[ {(A^t)^t}_{ij} = {A^t}_{ji} = A_{ij} \text { so } {(A^t)^t} = A. \]
+\end{proof}
+
+\subsubsection*{5. Prove that $A + A^t$ is symmetric for any square matrix $A$.}
+\begin{proof}
+	Let $A$ be an $n \times n$ square matrix. Then \[ A_{ij} + {A^t}_{ij} = A_{ij} + A_{ji} = A_{ji} + A_{ij} = A_{ji} + {A^t}_{ji}, \] so ${(A+A^t)_{ij} = (A+A^t)_{ji} = {(A+A^t)^t}_{ij}}$, therefore $A+A^t$ is symmetric.
+\end{proof}
+
+\subsubsection*{6. Prove that $\text{tr}(aA + bB) = a\text{tr}(A) + b\text{tr}(B)$ for any $A,B \in \textbf{\textup{M}}_{n \times n}(F)$.}
+\begin{proof}
+	For any $i \le n$, $(aA + bB)_{ii} = (aA)_{ii} + (bB)_{ii} = a(A_{ii}) + b(B_{ii})$, so $\text{tr}(aA + bB) = a\text{tr}(A) + b\text{tr}(B)$.
+\end{proof}
+
+\subsubsection*{7. Prove that diagonal matrices are symmetric matrices.}
+\begin{proof}
+	Let $A$ be an $n \times n$ diagonal matrix. Then for any $i, j \le n$ such that $i \ne j$, $A_{ij} = 0 = A_{ji} = {A^t}_{ij}$. If $i = j$, then $A_{ij} = A_{ji} = {A^t}_{ij}$, so the matrix is symmetric.
+\end{proof}
+
 \end{document}
