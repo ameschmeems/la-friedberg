@@ -223,6 +223,14 @@ The \textbf{trace} of an $n \times n$ matrix $M$, denoted $\text{tr}(M)$, is the
 	Any intersection of subspaces of a vector space \textbf{\textup{V}} is a subspace of \textbf{V}.
 \end{theorem}
 
+\begin{definition}
+	If $S_1$ and $S_2$ are nonempty subsets of a vector space $V$, then the \textbf{sum} of $S_1$ and $S_2$, denoted $S_1 + S_2$, is the set $\left\{x + y: x\in S_1 \text{ and } y \in S_2\right\}.$
+\end{definition}
+
+\begin{definition}
+	A vector space $V$ is called the \textbf{direct sum} of $W_1$ and $W_2$ if $W_1$ and $W_2$ are subspaces of $V$ such that $W_1 \cap W_2 = {0}$ and $W_1 + W_2 = V$. We denote that $V$ is the direct sum of $W_1$ and $W_2$ by writing $V = W_1 \bigoplus W_2$.
+\end{definition}
+
 \subsection*{Exercises}
 \subsubsection*{1. Label the following statements as true or false.}
 \begin{enumerate}
@@ -330,5 +338,58 @@ The \textbf{trace} of an $n \times n$ matrix $M$, denoted $\text{tr}(M)$, is the
 \end{proof}
 
 \subsubsection*{20. Prove that if $W$ is a subspace of a vector space $V$ and $w_1, w_2, \dots, w_n$ are in $W$, then $a_1w_1 + a_2w_2 + \dots + a_nw_n \in W$ for any scalars $a_1, a_2, \dots, a_n$.}
+\begin{proof}
+	Let $n = 1$. Then $a_1w_1 \in W$ by the definition of a subspace. Next, suppose that for some $n \ge 2$, $a_1w_1 + a_2w_2 + \dots + a_{n-1}w_{n-1} \in W$. Then \[ a_1w_1 + a_2w_2 + \dots a_nw_n = (a_1w_1 + a_2w_2 + \dots a_{n-1}w_{n-1}) + a_nw_n. \] Since $(a_1w_1 + a_2w_2 + \dots + a_{n-1}w_{n-1}) \in W$ and $a_nw_n \in W$ and subspaces are closed under addition, $a_1w_1 + a_2w_2 + \dots + a_nw_n \in W$.
+\end{proof}
+
+\subsubsection*{23. Let $W_1$ and $W_2$ be subspaces of a vector space $V$.}
+\begin{enumerate}
+	\item[(a)] Prove that $W_1 + W_2$ is a subspace of $V$ that contains both $W_1$ and $W_2$.
+	
+	Assume, without loss of generality that $x$ is a vector in $W_1$. Then, since $W_2$ contains $0$, $x + 0 = x \in W_1 + W_2$.
+	\item[(b)] Prove that any subspace of $V$ that contains both $W_1$ and $W_2$ must also contain $W_1 + W_2$.
+	
+	Let $W_3$ be a subspace of $V$, such that it contains both $W_1$ and $W_2$. Since subspaces are closed under addition, for any $x \in W_1$ and $y \in W_2$, $x + y \in W_3$, so $W_3$ must contain $W_1 + W_2$.
+\end{enumerate}
+
+\subsubsection*{24. Show that $F^n$ is the direct sum of the subspaces \[ W_1 = \left\{(a_1, a_2, \dots, a_n) \in F^n: a_n = 0\right\} \] and \[ W_2 = \left\{(a_1, a_2, \dots, a_n) \in F^n: a_1 = a_2 = \dots = a_{n-1} = 0\right\}. \]}
+\begin{proof}
+	Let $x = (x_1, x_2, \dots, x_n) \in W_1$ and $y = (y_1, y_2, \dots, y_n) \in W_2$. Then \[ x + y = (x_1 + y_1, x_2 + y_2, \dots, x_n + y_n) = (x_1 + 0, x_2 + 0, \dots, x_{n-1} + 0, 0 + y_n) = (x_1, x_2, \dots, y_n), \]
+	where $x_1, x_2, \dots, x_{n-1}, y_n \in F$, so $F^n = W_1 + W_2$.
+
+	Next, \[ W_1 \cap W_2 = \left\{(a_1, a_2, \dots, a_n) \in F^n: a_1 = a_2 = \dots = a_n = 0\right\} = \left\{0\right\},\] so $F^n = W_1 \bigoplus W_2$.
+\end{proof}
+
+\subsubsection*{27. Let $V$ denote the vector space of all upper triangular $n \times n$ matrices, and let $W_1$ denote the subspace of $V$ consisting of all diagonal matrices. Define \[W_2 = \left\{A \in V: A_{ij} = 0 \text{ whenever } i \ge j\right\}.\] Show that $V = W_1 \bigoplus W_2$.}
+\begin{proof}
+	Let $A \in W_1$ and $B \in W_2$. Then
+	\begin{align*}
+		A + B = 
+		\begin{bmatrix}
+			a_{11} & 0 & \hdots & 0 \\
+			0 & a_{22} & \hdots & 0 \\
+			\vdots & \vdots & \ddots & \vdots \\
+			0 & 0 & \hdots & a_{nn}
+		\end{bmatrix} +
+		\begin{bmatrix}
+			0 & b_{12} & \hdots & b_{1n} \\
+			0 & 0 & \hdots & b_{2n} \\
+			\vdots & \vdots & \ddots & \vdots \\
+			0 & 0 & \hdots & 0
+		\end{bmatrix} =
+		\begin{bmatrix}
+			a_{11} & b_{12} & \hdots & b_{1n} \\
+			0 & a_{22} & \hdots & b_{2n} \\
+			\vdots & \vdots & \ddots & \vdots \\
+			0 & 0 & \hdots & a_{nn}
+		\end{bmatrix},
+	\end{align*}
+	so $V = W_1 + W_2$.
+
+	Next, \[ W_1 \cap W_2 = \left\{A \in V: A_{ij} = 0 \text{ whenever } i \ge j \text{ and } i \ne j\right\} = \left\{0\right\}, \]
+	so $V = W_1 \bigoplus W_2$.
+\end{proof}
+
+\subsubsection*{28. A matrix $M$ is called \textbf{skew-symmetric} if $M^t = -M$. Clearly, a skew-symmetric matrix is square. Let $F$ be a field. Prove that the set $W_1$ of all skew-symmetric $n \times n$ matrices with entries from $F$ is a subspace of $M_{n\times n}(F)$. Now assume that $F$ is not of characteristic two, and let $W_2$ be the subspace of $M_{n\times n}(F)$ consisting of all symmetric $n \times n$ matrices. Prove that $M_{n \times n}(F) = W_1 \bigoplus W_2$.}
 
 \end{document}
