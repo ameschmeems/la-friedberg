@@ -386,10 +386,29 @@ The \textbf{trace} of an $n \times n$ matrix $M$, denoted $\text{tr}(M)$, is the
 	\end{align*}
 	so $V = W_1 + W_2$.
 
-	Next, \[ W_1 \cap W_2 = \left\{A \in V: A_{ij} = 0 \text{ whenever } i \ge j \text{ and } i \ne j\right\} = \left\{0\right\}, \]
+	Next, \[ W_1 \cap W_2 = \left\{A \in V: A_{ij} = 0 \text{ whenever } i \ge j \text{ or } i \ne j\right\} = \left\{0\right\}, \]
 	so $V = W_1 \bigoplus W_2$.
 \end{proof}
 
 \subsubsection*{28. A matrix $M$ is called \textbf{skew-symmetric} if $M^t = -M$. Clearly, a skew-symmetric matrix is square. Let $F$ be a field. Prove that the set $W_1$ of all skew-symmetric $n \times n$ matrices with entries from $F$ is a subspace of $M_{n\times n}(F)$. Now assume that $F$ is not of characteristic two, and let $W_2$ be the subspace of $M_{n\times n}(F)$ consisting of all symmetric $n \times n$ matrices. Prove that $M_{n \times n}(F) = W_1 \bigoplus W_2$.}
+\begin{proof}
+	$0 \in W_1$, since $0^t = 0 = -0$. Let $A, B \in W_1$. Then \[(A + B)^t = A^t + B^t = -A + (-B) = -(A + B),\] so $A + B \in W_1$. Now let $a \in F$. Then $(aA)^t = aA^t = -aA$, so $aA \in W_1$, and thus $W_1$ is a subspace of $M_{n \times n}(F)$.
+
+	Let $A$ be any square $n \times n$ matrix. Then if $B$ is an $n \times n$ square matrix, such that $B_{ij} = A_{ij}$ whenever $i = j$, $B_{ij} = A_{ij} + \frac{1}{2}(A_{ji} - A_{ij})$ whenever $i < j$ and $B_{ij} = B_{ji}$ whenever $i > j$, then $B$ is a symmetric matrix, so $B \in W_2$, and if $C$ is an $n \times n$ square matrix, such that $C_{ij} = 0$ whenever $i = j$, $C_{ij} = \frac{1}{2}(A_{ji} - A_{ij})$ whenever $i > j$ and $C_{ij} = -C_{ji}$ whenever $i < j$, then $C$ is skew-symmetric, so $C \in W_1$. Then:
+	\begin{enumerate}
+		\item If $i = j$ \[ B_{ij} + C_{ij} = A_{ij} + 0 = A_{ij} \]
+		\item If $i < j$ \[ B_{ij} + C_{ij} = A_{ij} + \frac{1}{2}(A_{ji} - A_{ij}) - \frac{1}{2}(A_{ji} - A_{ij}) = A_{ij} \]
+		\item If $j > i$ \[ B_{ij} + C_{ij} = A_{ji} + \frac{1}{2}(A_{ij} - A_{ji}) + \frac{1}{2}(A_{ij} - A_{ji}) = A_{ji} + A_{ij} - A_{ji} = A_{ij}, \]
+	\end{enumerate}
+	so $A = B + C$, and thus $M_{n \times n}(F) = W_1 + W_2$.
+	\[ W_1 \cap W_2 = \left\{A \in M_{n \times n}(F): A^t = -A \text{ and } A^t = A\right\} = \left\{0\right\}, \] so $M_{n \times n}(F) = W_1 \bigoplus W_2$.
+\end{proof}
+
+\subsubsection*{30. Let $W_1$ and $W_2$ be subspaces of a vector space $V$. Prove that $V$ is the direct sum of $W_1$ and $W_2$ if and only if each vector in $V$ can be uniquely written as $x_1 + x_2$ where $x_1 \in W_1$ and $x_2 \in W_2$.}
+\begin{proof}
+	Suppose that $V$ is the direct sum of $W_1$ and $W_2$, and that there exist some $x_1, {x_1}^\prime \in W_1$ and $x_2, {x_2}^\prime \in W_2$, such that $x_1 + x_2 = {x_1}^\prime + {x_2}^\prime \in V$. Then $x_1 - {x_1}^\prime = {x_2}^\prime - x_2 \in W_1 \cap W_2 = \left\{0\right\}$, so $x_1 - {x_1}^\prime = 0 = {x_2}^\prime - x_2$, and $x_1 = {x_1}^\prime$ and $x_2 = {x_2}^\prime$.
+
+	For the converse, suppose that any vector in $V$ can be represented uniquely as $x_1 + x_2$, for $x_1 \in W_1$ and $x_2 \in W_2$. Then $V = W_1 + W_2$. Let $y \in W_1 \cap W_2$. Then $y = y + 0 = 0 + y$, and since it is unique, $y = 0$, so $W_1 \cap W_2 = \left\{0\right\}$.
+\end{proof}
 
 \end{document}
