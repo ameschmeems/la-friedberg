@@ -411,4 +411,42 @@ The \textbf{trace} of an $n \times n$ matrix $M$, denoted $\text{tr}(M)$, is the
 	For the converse, suppose that any vector in $V$ can be represented uniquely as $x_1 + x_2$, for $x_1 \in W_1$ and $x_2 \in W_2$. Then $V = W_1 + W_2$. Let $y \in W_1 \cap W_2$. Then $y = y + 0 = 0 + y$, and since it is unique, $y = 0$, so $W_1 \cap W_2 = \left\{0\right\}$.
 \end{proof}
 
+\section{Linear combinations and systems of linear equations}
+
+\begin{definition}
+	Let $V$ be a vector space and $S$ a nonempty subset of $V$. A vector $v \in V$ is called a \textbf{linear combination} of vectors of $S$ if there exist a finite number of vectors $u_1, u_2, \dots, u_n$ in $S$ and scalars $a_1, a_2, \dots, a_n$ in $F$ such that $v = a_1u_1 + a_2u_2 + \dots + a_nu_n$. In this case we also say that $v$ is a linear combination of $u_1, u_2, \dots, u_n$ and call $a_1, a_2, \dots, a_n$ the \textbf{coefficients} of the linear combination.
+\end{definition}
+
+\begin{definition}
+	Let $S$ be a nonempty subset of a vector space $V$. The \textbf{span} of S, denoted $\text{span}(S)$, is the set consisting of all linear combinations of the vectors in $S$. For convenience, we define $\text{span}(\emptyset) = \left\{0\right\}$.
+\end{definition}
+
+\begin{theorem}
+	The span of any subset $S$ of a vector space $V$ is a subspace of $V$ that contains $S$. Moreover, any subspace of $V$ that contains $S$ must also contain the span of $S$.
+\end{theorem}
+
+\begin{definition}
+	A subset $S$ of a vector space $V$ \textbf{generates} (or \textbf{spans}) $V$ if $\text{span}(S) = V$. In this case, we also say that the vectors of $S$ generate (or span) $V$.
+\end{definition}
+
+\subsection*{Exercises}
+
+\subsubsection*{1. Label the following statements as true or false}
+\begin{enumerate}
+	\item[(a)] The zero vector is a linear combination of any nonempty set of vectors - \textbf{True}.
+	
+	For any vectors $v_1, v_2, \dots, v_n$, $0 = 0v_1 + 0v_2 + \dots + 0v_n$.
+	\item[(b)] The span of $\emptyset$ is $\emptyset$ - \textbf{False}.
+	
+	$\text{span}(\emptyset)$ is defined to be $\left\{0\right\}$.
+	\item[(c)] If $S$ is a subset of a vector space $V$, then $\text{span}(S)$ equals the intersection of all subspaces of $V$ that contain $S$ - \textbf{True}.
+	
+	It follows from theorem 1.5.
+	\item[(d)] In solving a system of linear equations, it is permissible to multiply an equation by any constant - \textbf{True}.
+	\item[(e)] In solving a system of linear equations, it is permissible to add any multiple of one equation to another - \textbf{True}.
+	\item[(f)] Every system of linear equations has a solution - \textbf{False}.
+	
+	Any system of linear equations that, while solving, produces a system containing $0 = c$, where $c$ is nonzero, does not have a solution.
+\end{enumerate}
+
 \end{document}
