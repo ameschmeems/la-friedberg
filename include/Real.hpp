@@ -15,10 +15,18 @@ public:
 
 	Real &operator=(const Real &rhs);
 	Real operator+(const Real &rhs) const;
+	Real &operator+=(const Real &rhs);
 	Real operator-(const Real &rhs) const;
+	Real &operator-=(const Real &rhs);
 	Real operator-() const;
 	Real operator*(const Real &rhs) const;
+	Real &operator*=(const Real &rhs);
 	Real operator/(const Real &rhs) const;
+	Real &operator/=(const Real &rhs);
+	bool operator<(const Real &rhs) const;
+	bool operator<=(const Real &rhs) const;
+	bool operator>(const Real &rhs) const;
+	bool operator>=(const Real &rhs) const;
 	bool operator==(const Real &rhs) const;
 	bool operator!=(const Real &rhs) const;
 

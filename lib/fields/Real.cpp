@@ -26,12 +26,24 @@ Real Real::operator+(const Real &rhs) const
 	return Real { _num + rhs._num };
 }
 
+Real &Real::operator+=(const Real &rhs)
+{
+	*this = *this + rhs;
+	return *this;
+}
+
 /**
  * Real number subtraction
 */
 Real Real::operator-(const Real &rhs) const
 {
 	return Real { _num - rhs._num };
+}
+
+Real &Real::operator-=(const Real &rhs)
+{
+	*this = *this - rhs;
+	return *this;
 }
 
 /**
@@ -50,12 +62,44 @@ Real Real::operator*(const Real &rhs) const
 	return Real { _num * rhs._num };
 }
 
+Real &Real::operator*=(const Real &rhs)
+{
+	*this = *this * rhs;
+	return *this;
+}
+
 /**
  * Real number division
 */
 Real Real::operator/(const Real &rhs) const
 {
 	return Real { _num / rhs._num };
+}
+
+Real &Real::operator/=(const Real &rhs)
+{
+	*this = *this / rhs;
+	return *this;
+}
+
+bool Real::operator<(const Real &rhs) const
+{
+	return _num < rhs._num;
+}
+
+bool Real::operator<=(const Real &rhs) const
+{
+	return _num <= rhs._num;
+}
+
+bool Real::operator>(const Real &rhs) const
+{
+	return _num > rhs._num;
+}
+
+bool Real::operator>=(const Real &rhs) const
+{
+	return _num >= rhs._num;
 }
 
 /**
