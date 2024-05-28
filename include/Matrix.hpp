@@ -3,6 +3,7 @@
 #include <array>
 #include <iostream>
 #include <stdexcept>
+#include "Vector.hpp"
 
 /**
  * An m by n matrix over field T
@@ -34,6 +35,16 @@ public:
 	*/
 	Matrix(std::array<std::array<T, m>, n> &&rhs) noexcept : _mat { std::move(rhs) }
 	{
+	}
+
+	/**
+	 * Initializes matrix with an array of columns
+	*/
+	Matrix(std::array<Vector<T, m>, n> &cols)
+	{
+		for (int i = 0; i < m; i++)
+			for (int j = 0; j < n; j++)
+				_mat[j][i] = cols[j][i];
 	}
 
 	Matrix &operator=(const Matrix &rhs)
@@ -263,10 +274,10 @@ private:
 			T highest_num {};
 			for (int j = pivot_num; j < m; j++)
 			{
-				if (_mat[i][j] > highest_num || highest_num == 0)
+				if (std::abs(_mat[i][j]) > highest_num || highest_num == 0)
 				{
 					pivot = j;
-					highest_num = _mat[i][j];
+					highest_num = std::abs(_mat[i][j]);
 				}
 			}
 			if (highest_num != 0)
@@ -301,10 +312,10 @@ private:
 			T highest_num {};
 			for (int j = pivot_num; j < m; j++)
 			{
-				if (_mat[i][j] > highest_num || highest_num.is_zero())
+				if (std::abs(_mat[i][j]) > highest_num || highest_num.is_zero())
 				{
 					pivot = j;
-					highest_num = _mat[i][j];
+					highest_num = std::abs(_mat[i][j]);
 				}
 			}
 			if (!highest_num.is_zero())

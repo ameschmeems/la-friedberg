@@ -18,15 +18,14 @@ void solve_and_print(Matrix<T, m, n> &mat)
 	}
 	std::cout << "Has solutions:" << std::endl;
 	Matrix<T, m, n> solved { mat.solve_system() };
+	std::cout << "The linear system:" << std::endl;
 	for (int i = 0; i < m; i++)
 	{
 		for (int j = 0; j < n - 1; j++)
 		{
 			if (solved[j][i] != 0)
 				std::cout << solved[j][i] << "x_" << j << " ";
-			else
-				std::cout << 0 << " ";
-			if (j != n-2)
+			if (j != n-2 && solved[j][i] != 0)
 				std::cout << "+ ";
 		}
 		std::cout << "= " << solved[n-1][i] << std::endl;
