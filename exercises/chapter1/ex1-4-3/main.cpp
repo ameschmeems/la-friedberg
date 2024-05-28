@@ -28,7 +28,7 @@ void solve_and_print(std::array<Vector<T, m>, n> &cols)
 		}
 	}
 	std::cout << cols[n - 1] << " = ";
-	// I know im using square matrices here, but using m for column index is not good
+	// I know im using square matrices here so this wont break, but using m for column index is not good
 	for (int i = 0; i < m - 2; i++)
 		std::cout << solved[n-1][i] << cols[i] << " + ";
 	std::cout << solved[n-1][m-2] << cols[m-2] << std::endl;
