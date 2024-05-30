@@ -517,4 +517,18 @@ The \textbf{trace} of an $n \times n$ matrix $M$, denoted $\text{tr}(M)$, is the
 	\].
 \end{proof}
 
+\subsubsection*{11. Prove that $\text{span}(\left\{x\right\}) = \left\{ax: a \in F\right\}$ for any vector $x$ in a vector space. Interpret this result geometrically in $R^3$.}
+\begin{proof}
+	Let $x$ be a vector in some vector space over a field $F$, and let $y \in \text{span}(\left\{x\right\})$. Then $y$ is a linear combination of $x$, so $y = ax$ for some $a \in F$. Let $z \in \left\{ax: a \in F\right\}$. Then $z = ax$, so $z$ is a linear combination of $x$, so $z \in \text{span}(\left\{x\right\})$. $\text{span}(\left\{x\right\})$ in $R^3$ is a line going through $x$ and the origin.
+\end{proof}
+
+\subsubsection*{12. Show that a subset $W$ of a vector space $V$ is a subspace of $V$ if and only if $\text{span}(W) = W$.}
+\begin{proof}
+	Let $W$ be a subset of a vector space $V$, and that $\text{span}(W) = W$. Then $0 \in W$, since $0x = 0$ for any $x \in W$. Let $x$ and $y$ be elements of $W$. Then $x + y \in \text{span}(W)$, since its a linear combination of elements of $W$, and therefore $x + y \in W$. For any scalar $c$, $cx \in \text{span}(W)$, so $cx \in W$, which means that $W$ is a subspace of $V$.
+
+	Now suppose that $W$ is a subspace of $V$. Then for vectors $x_1, x_2, \dots, x_n \in W$, and scalars $a_1, a_2, \dots, a_n$, $a_1x_1 + a_2x_2 + \dots + a_nx_n \in W$, so $W = \text{span}(W)$.
+\end{proof}
+
+\subsubsection*{13. Show that if $S_1$ and $S_2$ are subsets of a vector space $V$ such that $S_1 \subseteq S_2$ then $\text{span}(S_1) \subseteq \text{span}(S_2)$. In particular, if $S_1 \subseteq S_2$ and $\text{span}(S_1) = V$, deduce that $\text{span}(S_2) = V$.}
+
 \end{document}
