@@ -530,5 +530,24 @@ The \textbf{trace} of an $n \times n$ matrix $M$, denoted $\text{tr}(M)$, is the
 \end{proof}
 
 \subsubsection*{13. Show that if $S_1$ and $S_2$ are subsets of a vector space $V$ such that $S_1 \subseteq S_2$ then $\text{span}(S_1) \subseteq \text{span}(S_2)$. In particular, if $S_1 \subseteq S_2$ and $\text{span}(S_1) = V$, deduce that $\text{span}(S_2) = V$.}
+\begin{proof}
+	Let $S_1$ and $S_2$ be subsets of a vector space $V$, such that $S_1 \subseteq S_2$. Then for all elements $x_1, x_2, \dots, x_n \in S_1$, we know that $x_1, x_2, \dots, x_n \in S_2$, so $\text{span}(S_2)$ contains all linear combinations $a_1x_1, a_2x_2, \dots, a_nx_n$, with $a_1, a_2, \dots, a_n$ being scalars, that is $\text{span}(S_1) \subseteq \text{span}(S_2)$.
+
+	Now suppose that $S_1 \subseteq S_2$ and $\text{span}(S_1) = V$. Then $\text{span}(S_1) = V \subseteq \text{span}(S_2)$. Suppose that $\text{span}(S_2) \ne V$, that is, there exists some element $x \in \text{span}(S_2)$ such that $x \notin V$. Then $x$ is a linear combination of elements of $S_2$, and since $S_2$ is a subset of $V$, $x$ is a linear combination of some elements of $V$. Since $V$ is a subspace, this implies that $x \in V$, which leads to a contradiction.
+\end{proof}
+
+\subsubsection*{14. Show that if $S_1$ and $S_2$ are arbitrary subsets of a vector space $V$, then $\text{span}(S_1 \cup S_2) = \text{span}(S_1) + \text{span}(S_2)$.}
+\begin{proof}
+	Let $S_1$ and $S_2$ be arbitrary subsets of a vector space $V$. For a vector $v \in \text{span}(S_1 \cup S_2)$, we have $v = a_1x_1 + a_2x_2 + \dots a_nx_n + b_1y_1 + \dots b_my_m$, with $x_1, x_2, \dots, x_n \in S_1$, $y_1, y_2, \dots, y_m \in S_2$ and scalars $a_1, a_2, \dots, a_n$ and $b_1, b_2, \dots, b_m$. Then \[a_1x_1 + a_2x_2 + \dots a_nx_n \in \text{span}(S_1)\text{ and }b_1y_1 + b_2y_2 + \dots + b_my_m \in \text{span}(S_2),\] so for $x = a_1x_1 + a_2x_2 + \dots a_nx_n$ and $y = b_1y_1 + b_2y_2 + \dots + b_mx_m$, we have \[ v = x + y\text{, where } x\in \text{span}(S_1), y\in \text{span}(S_2), \] so $v \in \text{span}(S_1) + \text{span}(S_2)$.
+\end{proof}
+
+\subsubsection*{16. Let $V$ be a vector space and $S$ a subset of $V$ with the property that whenever $v_1, v_2, \dots, v_n \in S$ and $a_1v_1 + a_2v_2 + \dots + a_nv_n = 0$, then $a_1 = a_2 = \dots = a_n = 0$. Prove that every vector in the span of $S$ can be uniquely written as a linear combination of vectors of S.}
+\begin{proof}
+	Suppose that for a vector $x \in \text{span}(S)$, $x$ can be written as two different linear combinations of vectors of $S$, that is, for $x_1, x_2, \dots, x_n \in S$ and for scalars $a_1, b_1, a_2, b_2, \dots, a_n, b_n$, \[ a_1x_1 + a_2x_2 + \dots + a_nx_n = b_1x_1 + b_2x_2 + \dots + b_nx_n \text{ and } a_i \ne b_i \text{ for } 1 \le i \le n. \] Then
+	\begin{align*}
+		a_1x_1 + a_2x_2 + \dots + a_nx_n - b_1x_1 - b_2x_2 - \dots b_nx_n = (a_1 - b_1)x_1 + (a_2 - b_2)x_2 + \dots (a_n - b_n)x_n = 0,
+	\end{align*}
+	so $(a_1 - b_1) = (a_2 - b_2) = \dots = (a_n - b_n) = 0$, so $a_i = b_i$, for $1 \le i \le n$.
+\end{proof}
 
 \end{document}
