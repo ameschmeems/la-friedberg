@@ -8,6 +8,12 @@
 \newtheorem*{definition}{Definition}
 \newtheorem*{corollary}{Corollary}
 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
 \begin{document}
 
 \section{Introduction}
@@ -539,6 +545,8 @@ The \textbf{trace} of an $n \times n$ matrix $M$, denoted $\text{tr}(M)$, is the
 \subsubsection*{14. Show that if $S_1$ and $S_2$ are arbitrary subsets of a vector space $V$, then $\text{span}(S_1 \cup S_2) = \text{span}(S_1) + \text{span}(S_2)$.}
 \begin{proof}
 	Let $S_1$ and $S_2$ be arbitrary subsets of a vector space $V$. For a vector $v \in \text{span}(S_1 \cup S_2)$, we have $v = a_1x_1 + a_2x_2 + \dots a_nx_n + b_1y_1 + \dots b_my_m$, with $x_1, x_2, \dots, x_n \in S_1$, $y_1, y_2, \dots, y_m \in S_2$ and scalars $a_1, a_2, \dots, a_n$ and $b_1, b_2, \dots, b_m$. Then \[a_1x_1 + a_2x_2 + \dots a_nx_n \in \text{span}(S_1)\text{ and }b_1y_1 + b_2y_2 + \dots + b_my_m \in \text{span}(S_2),\] so for $x = a_1x_1 + a_2x_2 + \dots a_nx_n$ and $y = b_1y_1 + b_2y_2 + \dots + b_mx_m$, we have \[ v = x + y\text{, where } x\in \text{span}(S_1), y\in \text{span}(S_2), \] so $v \in \text{span}(S_1) + \text{span}(S_2)$.
+	
+	Now let $v \in \text{span}(S_1) + \text{span}(S_2)$. Then $v = x + y$, with $x \in \text{span}(S_1)$ and $y \in \text{span}(S_2)$. Then \[x = a_1x_1 + a_2x_2 + \dots + a_nx_n \text{ with } x_1, x_2, \dots, x_n \in S_1 \] and \[y = b_1y_1 + b_2y_2 + \dots + b_my_m \text{ with } y_1, y_2, \dots, y_m \in S_2.\] Then $v$ is a linear combination of vectors in $S_1$ and vectors in $S_2$, which means its a linear combination of vector in $S_1 \cup S_2$, so $v \in \text{span}(S_1 \cup S_2)$.
 \end{proof}
 
 \subsubsection*{16. Let $V$ be a vector space and $S$ a subset of $V$ with the property that whenever $v_1, v_2, \dots, v_n \in S$ and $a_1v_1 + a_2v_2 + \dots + a_nv_n = 0$, then $a_1 = a_2 = \dots = a_n = 0$. Prove that every vector in the span of $S$ can be uniquely written as a linear combination of vectors of S.}
@@ -548,6 +556,106 @@ The \textbf{trace} of an $n \times n$ matrix $M$, denoted $\text{tr}(M)$, is the
 		a_1x_1 + a_2x_2 + \dots + a_nx_n - b_1x_1 - b_2x_2 - \dots b_nx_n = (a_1 - b_1)x_1 + (a_2 - b_2)x_2 + \dots (a_n - b_n)x_n = 0,
 	\end{align*}
 	so $(a_1 - b_1) = (a_2 - b_2) = \dots = (a_n - b_n) = 0$, so $a_i = b_i$, for $1 \le i \le n$.
+\end{proof}
+
+\section{Linear Dependence and Linear Independence}
+\begin{definition}
+	A subset $S$ of a vector space $V$ is called \textbf{linearly dependent} if there exist a finite number of distinct vectors $u_1, u_2, \dots, u_n$ in $S$ and scalars $a_1, a_2, \dots, a_n$ not all zero, such that \[a_1u_1 + a_2u_2 + \dots + a_nu_n = 0\]In this case we also say that the vectors of $S$ are linearly dependent.
+\end{definition}
+
+If for any vectors $u_1, u_2, \dots, u_n$ we have $a_1u_1 + a_2u_2 + \dots + a_nu_n = 0$ if $a_1 = a_2 = \dots = a_n = 0$, we call this the \textbf{trivial representation} of $0$ as a linear combination of $u_1, u_2, \dots, u_n$.
+
+\begin{definition}
+	A subset $S$ of a vector space that is not linearly dependent is called \textbf{linearly independent}. As before, we also say that the vectors of $S$ are linearly independent.
+\end{definition}
+
+\begin{theorem}
+	Let $V$ be a vector space, and let $S_1 \subseteq S_2 \subseteq V$. If $S_1$ is linearly dependent, then $S_2$ is linearly dependent.
+\end{theorem}
+\begin{corollary}
+	Let $V$ be a vector space, and let $S_1 \subseteq S_2 \subseteq V$. If $S_2$ is linearly independent, then $S_1$ is linearly independent.
+\end{corollary}
+
+\begin{theorem}
+	Let $S$ be a linearly independent subset of a vector space $V$, and let $v$ be a vector in $V$ that is not in $S$. Then $S \cup \left\{v\right\}$ is linearly dependent if and only if $v \in \text{span}(S)$.
+\end{theorem}
+
+\subsection*{Exercises}
+
+\subsubsection*{1. Label the following statements as true or false.}
+\begin{enumerate}
+	\item[(a)] If $S$ is a linearly dependent set, then each vector in $S$ is a linear combination of other vectors in $S$ - \textbf{False}.
+	
+	At least one vector in $S$ is a linear combination of other vectors in $S$.
+	\item[(b)] Any set containing the zero vector is linearly dependent - \textbf{True}.
+	
+	$0 = 0v_1 + 0v_2 + \dots + 0v_n$, so $0$ is a linear combination of other vectors.
+	\item[(c)] The empty set is linearly dependent - \textbf{False}.
+	
+	Linearly dependent sets must be nonempty.
+	\item[(d)] Subsets of linearly dependent sets are linearly dependent - \textbf{False}.
+	
+	Consider $S_1 = \left\{(1, 0), (0, 1), (0, 2)\right\}$ and $S_2 = \left\{(1, 0), (0, 1)\right\}$. Then $S_1$ is linearly dependent, $S_2 \subset S_1$, and $S_2$ is linearly independent.
+	\item[(e)] Subsets of linearly independent sets are linearly dependent - \textbf{True}.
+	
+	Follows from theorem 1.6.
+	\item[(f)] If $a_1x_1 + a_2x_2 + \dots + a_nx_n = 0$ and $x_1, x_2, \dots, x_n$ are linearly independent, then all the scalars $a_i$ are zero - \textbf{True}.
+\end{enumerate}
+
+\subsubsection*{4. In $F^n$, let $e_j$ denote the vector whose $j$th coordinate is $1$ and whose other coordinates are $0$. Prove that $\left\{e_1, e_2, \dots, e_n\right\}$ is linearly independent.}
+\begin{proof}
+	\[a_1e_1 + a_2e_2 + \dots + a_ne_n = \left(a_1, a_2, \dots, a_n\right),\] so it is equal $0$ only when $a_1 = a_2 = \dots = a_n = 0$, which means $\left\{e_1, e_2, \dots, e_n\right\}$ is linearly independent.
+\end{proof}
+
+\subsubsection*{5. Show that the set $\left\{1, x, x^2, \dots, x^n\right\}$ is linearly independent in $P_n(F)$.}
+\begin{proof}
+	If \[a_0 + a_1x + a_2x^2 + \dots + a_nx^n = 0\]for some scalars $a_0, a_1, \dots, a_n$, then this is the unique $0$ vector in $P_n(F)$, so $a_0 = a_1 = \dots = a_n = 0$.
+\end{proof}
+
+\subsubsection*{6. In $M_{3\times2}(F)$, prove that the set \[\left\{\begin{bmatrix}
+	1 & 1 \\ 0 & 0 \\ 0 & 0
+\end{bmatrix}, \begin{bmatrix}
+	0 & 0 \\ 1 & 1 \\ 0 & 0
+\end{bmatrix}, \begin{bmatrix}
+	0 & 0 \\ 0 & 0 \\ 1 & 1
+\end{bmatrix}, \begin{bmatrix}
+	1 & 0 \\ 1 & 0 \\ 1 & 0
+\end{bmatrix}, \begin{bmatrix}
+	0 & 1 \\ 0 & 1 \\ 0 & 1
+\end{bmatrix}\right\}\] is linearly dependent.}
+\begin{proof}
+	\[
+		\begin{bmatrix}
+			1 & 1 \\ 0 & 0 \\ 0 & 0
+		\end{bmatrix} + \begin{bmatrix}
+			0 & 0 \\ 1 & 1 \\ 0 & 0
+		\end{bmatrix} + \begin{bmatrix}
+			0 & 0 \\ 0 & 0 \\ 1 & 1
+		\end{bmatrix} - \begin{bmatrix}
+			1 & 0 \\ 1 & 0 \\ 1 & 0
+		\end{bmatrix} - \begin{bmatrix}
+			0 & 1 \\ 0 & 1 \\ 0 & 1
+		\end{bmatrix} = 0
+	\] so the set is linearly dependent.
+\end{proof}
+
+\subsubsection*{8. Let $S = \left\{(1, 1, 0), (1, 0, 1), (0, 1, 1)\right\}$ be a subset of the vector space $F^3$.}
+\begin{enumerate}
+	\item[(a)] Prove that if $F = \R$, then $S$ is linearly independent.
+	\begin{proof}
+		If \[a_1(1, 1, 0) + a_2(1, 0, 1) + a_3(0, 1, 1) = 0\] then \[a_1 + a_2 = 0\]\[a_1 + a_3 = 0\]\[a_2 + a_3 = 0\] so $a_1 = a_2 = a_3 = 0$.
+	\end{proof}
+	\item[(b)] Prove that if $F$ has characteristic two, then $S$ is linearly dependent.
+	\begin{proof}
+		If $F$ has characteristic two, then \[(1, 1, 0) + (1, 0, 1) + (0, 1, 1) = (1 + 1, 1 + 1, 1+ 1) = 0\]so $S$ is linearly dependent.
+	\end{proof}
+\end{enumerate}
+
+\subsubsection*{9. Let $u$ and $v$ be distinct vectors in a vector space $V$. Show that $\left\{u, v\right\}$ is linearly dependent if and only if $u$ or $v$ is a multiple of the other.}
+\begin{proof}
+	Suppose that $\left\{u, v\right\}$ is linearly dependent. Then for some scalars $a_1, a_2$ not both $0$, \[a_1u + a_2v = 0,\] so $a_1u = -a_2v$. Suppose without loss of generality that $a_1 \ne 0$. Then \[u = -\frac{a_2}{a_1}v,\] so $v$ is a multiple of $u$.
+	
+	For the converse, suppose without loss of generality that $v$ is a multiple of $u$. Then for some scalar $a$, $u = av$, so $u - av = 0$, which means that $\left\{u, v\right\}$ is linearly dependent.
 \end{proof}
 
 \end{document}
