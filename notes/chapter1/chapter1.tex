@@ -658,4 +658,41 @@ If for any vectors $u_1, u_2, \dots, u_n$ we have $a_1u_1 + a_2u_2 + \dots + a_n
 	For the converse, suppose without loss of generality that $v$ is a multiple of $u$. Then for some scalar $a$, $u = av$, so $u - av = 0$, which means that $\left\{u, v\right\}$ is linearly dependent.
 \end{proof}
 
+\subsubsection*{10. Give an example of three linearly dependent vectors in $\R^3$ such that none of the three is a multiple of another.}
+$(1, 0, 0), (0, 1, 0), (1, 1, 0)$
+
+\subsubsection*{12. Prove Theorem 1.6 and its corollary.}
+\begin{proof}
+	Let $V$ be a vector space, and let $S_1 \subseteq S_2 \subseteq V$, and suppose that $S_1$ is linearly dependent. That means, there exists a vector $x_0 \in S_1$ that can be represented as a linear combination of some other vectors in $S_1$: $x_1, x_2, \dots, x_n$. So \[x_0 = a_1x_1 + a_2x_2 + \dots + a_nx_n.\] Then since $x_0, x_1, \dots, x_n$ are all in $S_2$, there exists a vector in $S_2$ that can be represented as a linear combination of some other vectors in $S_2$, so $S_2$ is linearly dependent.
+\end{proof}
+\begin{corollary}
+	Let $V$ be a vector space, and let $S_1 \subseteq S_2 \subseteq V$. If $S_2$ is linearly independent, then $S_1$ is linearly independent.
+\end{corollary}
+\begin{proof}
+	This is just the contraposition of Theorem 1.6.
+\end{proof}
+
+\subsubsection*{14. Prove that a set $S$ is linearly dependent if and only if $S = \left\{0\right\}$ or there exist distinct vectors $v, u_1, u_2, \dots, u_n$ such that $v$ is a linear combination of $u_1, u_2, \dots, u_n$.}
+\begin{proof}
+	Let $S = \left\{0\right\}$. Then $S$ is linearly dependent, because $0 = a \cdot 0$ for any non-zero scalar $a$. Suppose that there exist distinct vectors $v, u_1, u_2, \dots, u_n$ such that $v$ is a linear combination of $u_1, u_2, \dots, u_n$, so \[v = a_1u_1 + a_2u_2 + \dots + a_nu_n.\] Then \[0 = a_1u_1 + a_2u_2 + \dots a_nu_n - v,\] so $S$ is linearly dependent.
+
+	For the converse, suppose that $S \ne \left\{0\right\}$ and that there are no distinct vectors $v, u_1, u_2, \dots, u_n$ such that $v$ is a linear combination of $u_1, u_2, \dots, u_n$. Suppose that $S$ is linearly dependent. Then there exist scalars $a_0, a_1, \dots, a_n$ not all $0$ such that \[0 = a_0v + a_1u_1 + a_2u_2 + \dots + a_nu_n.\] Then at least $1$ scalar is not $0$, say $a_0$. Then \[-a_0v = a_1u_1 + a_2u_2 + \dots + a_nu_n,\] so \[v = -\frac{1}{a_0}(a_1u_1 + a_2u_2 + \dots + a_nu_n)\] which contradicts the original assumption, so $S$ has to be linearly independent.
+\end{proof}
+
+\subsubsection*{15. Let $S = \left\{u_1. u_2, \dots, u_n\right\}$ be a finite set of vectors. Prove that $S$ is linearly dependent if and only if $u_1 = 0$ or $u_{k+1}\in \text{span}(\left\{u_1, u_2, \dots, u_k\right\})$ for some $k$ ($1 \le k < n$).}
+\begin{proof}
+	Let $S = \left\{u_1, u_2, \dots, u_n\right\}$ be a finite set of vectors. If $u_1 = 0$ then \[0 = au_1 + 0u_2 + 0u_3 + \dots + 0u_n\] with $a$ nonzero, so $S$ is linearly dependent. Suppose that for some $k$, $1 \le k < n$, $u_{k+1} \in \text{span}(\left\{u_1, u_2, \dots, u_k\right\})$. Then there exist some scalars $a_1, a_2, \dots, a_k$ such that \[u_{k+1} = a_1u_1 + a_2u_2 + \dots + a_ku_k,\] so \[0 = a_1u_1 + a_2u_2 + \dots + a_ku_k - u_{k+1}\] so $S$ is linearly dependent.
+
+	For the converse, suppose that $u_1 \ne 0$ and that there is no $k$ such that $1 \le k < n$ and $u_{k+1} \in \text{span}(\left\{u_1, u_2, \dots, u_k\right\})$. Suppose that $S$ is linearly dependent. Then \[0 = a_1u_1 + a_2u_2 + \dots + a_nu_n\] with scalars $a_1, a_2, \dots, a_n$ not all $0$. Then there exists a nonzero scalar such that the scalars after it in the above sum are all $0$, say that scalar is $a_n$. Then \[u_n = -\frac{1}{a_n}(a_1u_1 + a_2u_2 + \dots + a_{n-1}u_{n-1}).\] So $u_n \in \text{span}(\left\{u_1, u_2, \dots, u_{n-1}\right\})$ which contradicts the original assumption, so $S$ has to be linearly independent.
+\end{proof}
+
+\subsubsection*{16. Prove that a set $S$ of vectors is linearly independent if and only if each finite subset of $S$ is linearly independent.}
+\begin{proof}
+	Suppose that a set $S$ of vectors is linearly independent. Then it follows from the corollary of Theorem 1.6 that any finite subset of $S$ has to be linearly independent.
+
+	For the converse, suppose that each finite subset of $S$ is linearly independent. Then there is no finite number of distinct vectors $u_1, u_2, \dots, u_n$ in $S$ and scalars $a_1, a_2, \dots, a_n$ not all zero, such that \[a_1u_1 + a_2u_2 + \dots + a_nu_n = 0,\] which is the definition of linear independence.
+\end{proof}
+
+\subsubsection*{20. Let $f, g \in F(\R, \R)$ be the functions defined by $f(t) = e^{rt}$ and $g(t) = e^{st}$, where $r \ne s$. Prove that $f$ and $g$ are linearly independent in $F(\R, \R)$.}
+
 \end{document}
