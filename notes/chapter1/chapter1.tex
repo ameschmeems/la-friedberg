@@ -694,5 +694,15 @@ $(1, 0, 0), (0, 1, 0), (1, 1, 0)$
 \end{proof}
 
 \subsubsection*{20. Let $f, g \in F(\R, \R)$ be the functions defined by $f(t) = e^{rt}$ and $g(t) = e^{st}$, where $r \ne s$. Prove that $f$ and $g$ are linearly independent in $F(\R, \R)$.}
+\begin{proof}
+	Suppose that $f$ and $g$ are linearly dependent. Then $f = ig$ for some $i$. So $f(0) = i \cdot g(0)$, and $1 = i \cdot 1$, so $i = 1$. We then have $f(1) = g(1)$, so $e^r = e^s$, and $r = s$ which contradicts $r \ne s$.
+\end{proof}
+
+\subsubsection*{21. Let $S_1$ and $S_2$ be disjoint linearly independent subsets of $V$. Prove that $S_1 \cup S_2$ is linearly dependent if and only if $\text{span}(S_1) \cap \text{span}(S_2) \ne \left\{0\right\}$.}
+\begin{proof}
+	Suppose that $S_1 \cup S_2$ is linearly dependent. Then there exist vectors $u_1, u_2, \dots, u_n \in S_1$, and $v_1, v_2, \dots, v_m \in S_2$ and scalars $a_1, \dots, a_n, b_1, \dots, b_m$ not all zero such that \[ a_1u_1 + a_2u_2 + \dots + a_nu_n + b_1v_1 + b_2v_2 + \dots + b_mv_m = 0. \]Then \[a_1u_1 + a_2u_2 + \dots + a_nu_n = -b_1v_1 - b_2v_2 - \dots - b_mv_m,\]and since $S_1$ and $S_2$ are linearly independent, we know these are not equal to 0, so it is a non-zero element of $\text{span}(S_1)\cap \text{span}(S_2)$.
+
+	For the converse, suppose that $\text{span}(S_1)\cap\text{span}(S_2)\ne\left\{0\right\}.$ Then there exists a non-zero element \[x = a_1u_1 + a_2u_2 + \dots + a_nu_n = b_1v_1 + b_2v_2 + \dots + b_mv_m\] for some vectors $u_1, u_2, \dots, u_n \in S_1$ and $v_1, v_2, \dots, v_m \in S_2$ and vectors $a_1, a_2, \dots, a_n, b_1, b_2, \dots, b_m$. Then \[ a_1u_1 + a_2u_2 + \dots + a_nu_n - b_1v_1 - b_2v_2 - \dots - b_mv_m = 0,\] so $S_1 \cup S_2$ is linearly dependent.
+\end{proof}
 
 \end{document}
