@@ -788,4 +788,81 @@ $(1, 0, 0), (0, 1, 0), (1, 1, 0)$
     It follows from corollary 2 of the replacement theorem.
 \end{enumerate}
 
+\subsubsection*{6. Give three different bases for $F^2$ and $M_{2\times 2}(F)$}
+
+Let $a \in F$ and $a \ne 0$. Then $A = \left\{(a, 0), (0, a)\right\}$, $B = \left\{(-a, 0), (0, -a)\right\}$ and $C \left\{(a, 0), (0, -a)\right\}$ are all bases for $F^2$.
+
+Then $D = \left\{
+	\begin{bmatrix}
+		a & 0 \\
+		0 & 0
+	\end{bmatrix},
+	\begin{bmatrix}
+		0 & a \\
+		0 & 0
+	\end{bmatrix}
+	\begin{bmatrix}
+		0 & 0 \\
+		a & 0
+	\end{bmatrix}
+	\begin{bmatrix}
+		0 & 0 \\
+		0 & a
+	\end{bmatrix}
+\right\}$,
+$E = \left\{
+	\begin{bmatrix}
+		-a & 0 \\
+		0 & 0
+	\end{bmatrix},
+	\begin{bmatrix}
+		0 & -a \\
+		0 & 0
+	\end{bmatrix}
+	\begin{bmatrix}
+		0 & 0 \\
+		-a & 0
+	\end{bmatrix}
+	\begin{bmatrix}
+		0 & 0 \\
+		0 & -a
+	\end{bmatrix}
+\right\}$, and
+$F = \left\{
+	\begin{bmatrix}
+		a & 0 \\
+		0 & 0
+	\end{bmatrix},
+	\begin{bmatrix}
+		0 & a \\
+		0 & 0
+	\end{bmatrix}
+	\begin{bmatrix}
+		0 & 0 \\
+		-a & 0
+	\end{bmatrix}
+	\begin{bmatrix}
+		0 & 0 \\
+		0 & -a
+	\end{bmatrix}
+\right\}$ are all bases for $M_{2\times 2}(F)$.
+
+\subsubsection*{9. The vectors $u_1 = (1,1,1,1), u_2=(0,1,1,1), u_3=(0,0,1,1)$ and $u_4 = (0,0,0,1)$ form a basis for $F^4$. Find the unique representation of an arbitrary vector $(a_1, a_2, a_3, a_4)$ in $F^4$ as a linear combination of $u_1, u_2, u_3, u_4$.}
+
+\begin{align*}
+	a_1(1,1,1,1) &+ (a_2 - a_1)(0, 1, 1, 1) + (a_3 - a_2)(0, 0, 1, 1) + (a_4 - a_3)(0, 0, 0, 1) \\&= (a_1, a_1 + a_2 - a_1, a_1 + a_2 - a_1 + a_3 - a_2, a_1 + a_2 - a_1 + a_3 - a_2 + a_4 - a_3) \\&= (a_1, a_2, a_3, a_4) 
+\end{align*}
+
+\subsubsection*{11. Let $u$ and $v$ be distinct vectors of a vector space $V$. Show that if $\left\{u, v\right\}$ is a basis for $V$ and $a$ and $b$ are nonzero scalars, then both $\left\{u + v, au\right\}$ and $\left\{au, bv\right\}$ are also bases for $V$.}
+
+\begin{proof}
+	Let $w$ be a vector in $V$. Then $w = xu + yv$ for some scalars $x$ and $y$. Then \[xu + yv = yu + yv + xu - yu = y(u + v) + \frac{x - y}{a}(au),\] so $A = \left\{u + v, au\right\}$ generates $V$.
+
+	Additionally, \[xu + yu = \frac{x}{a}au + \frac{y}{b}bv,\] so $B = \left\{au, bv\right\}$ also generates $V$.
+	
+	Since $dim(V) = 2$ and both $A$ and $B$ are generating sets for $V$, each with 2 vectors, they are both a basis for $V$.
+\end{proof}
+
+\subsubsection*{15. The set of all $n\times n$ matrices having trace equal to zero is a subspace $W$ of $M_{n\times n}(F)$. Find a basis for $W$. What is the dimension of $W$?}
+
 \end{document}
