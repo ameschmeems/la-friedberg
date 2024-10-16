@@ -858,11 +858,29 @@ $F = \left\{
 \begin{proof}
 	Let $w$ be a vector in $V$. Then $w = xu + yv$ for some scalars $x$ and $y$. Then \[xu + yv = yu + yv + xu - yu = y(u + v) + \frac{x - y}{a}(au),\] so $A = \left\{u + v, au\right\}$ generates $V$.
 
-	Additionally, \[xu + yu = \frac{x}{a}au + \frac{y}{b}bv,\] so $B = \left\{au, bv\right\}$ also generates $V$.
+	Additionally, \[xu + yv = \frac{x}{a}au + \frac{y}{b}bv,\] so $B = \left\{au, bv\right\}$ also generates $V$.
 	
 	Since $dim(V) = 2$ and both $A$ and $B$ are generating sets for $V$, each with 2 vectors, they are both a basis for $V$.
 \end{proof}
 
 \subsubsection*{15. The set of all $n\times n$ matrices having trace equal to zero is a subspace $W$ of $M_{n\times n}(F)$. Find a basis for $W$. What is the dimension of $W$?}
+
+\begin{proof}
+	If $i, j > 0$ and $i, j \le n$, and $E_{ij}$ is a matrix with $1$ in the $(i, j)$-th entry, and $0$ for all other entries, then a basis for $W$ is $\left\{E_{ij} | i \ne j\right\}\cup \left\{E_{11} - E_{ii} | 1 < i \le n \right\}$. $W$ is $n^2 - 1$ dimensional.
+\end{proof}
+
+\subsubsection*{16. The set of all upper triangular $n \times n$ matrices is a subspace $W$ of $M_{n\times n}(F)$. Find a basis for $W$. What is the dimension of $W$?}
+
+\begin{proof}
+	If $i, j > 0$ and $i, j \le n$, and $E_{ij}$ is a matrix with $1$ in the $(i,j)$-th entry, and $0$ for all other entries, then a basis for $W$ is $\left\{E_{ij} | i \le j\right\}$. $W$ has dimension $n + (n+1) + \dots + 1 = \frac{n(n+1)}{2}$.
+\end{proof}
+
+\subsubsection*{17. The set of all skew-symmetric $n\times n$ matrices is a subspace $W$ of $M_{n\times n}(F)$. Find a basis for $W$. What is the dimension of $W$?}
+
+\begin{proof}
+	If $i, j > 0$ and $i, j \le n$, then a basis for $W$ is the set of matrices, such that the entry $(i, j)$ is equal to $1$, $(j, i)$ is equal to $-1$, and $i < j$. $W$ has dimension $(n-1) + (n-2) + \dots + 1 = \frac{n(n-1)}{2}$.
+\end{proof}
+
+\subsubsection*{19. Complete the proof of Theorem 1.8.}
 
 \end{document}
