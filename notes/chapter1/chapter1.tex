@@ -883,4 +883,27 @@ $F = \left\{
 
 \subsubsection*{19. Complete the proof of Theorem 1.8.}
 
+\begin{proof}
+	In the chapter, it is already proven that if $\beta = \left\{u_1, u_2, \dots, u_n\right\}$ is a basis for $V$, then each $v \in V$ can be uniquely expressed as a linear combination of vectors of $\beta$. Now it remains to prove that the converse of this statement is also true.
+
+	Suppose that each $v \in V$ can be uniquely expressed as a linear combination of vectors in $\beta$. Then $\text{span}(\beta) = V$. Since it is a unique combination, and $0 \in V$, \[ 0 = 0u_1 + 0u_2 + \dots 0u_n \] is a unique combination, so $\beta$ is linearly independent. Since $\beta$ spans $V$ and is linearly independent, it is a basis for $V$.
+\end{proof}
+
+\subsubsection*{20. Let $V$ be a vector space having dimension $n$, and let $S$ be a subset of $V$ that generates $V$.}
+\begin{enumerate}
+	\item[(a)] Prove that there is a subset of $S$ that is a basis for $V$. (Be careful not to assume that $S$ is finite)
+	\begin{proof}
+		We consider two cases: $S$ is finite, or $S$ is inifinite. If $S$ is finite, then by theorem 1.9, we know that there exists a subset of $S$ that is a basis for $V$, therefore it remains to prove the statement for when $S$ is infinite. 
+		
+		If $V$ has dimension $0$, then $\beta = \emptyset$ is a basis for $V$, and $\beta \subset S$. Otherwise, $S$ contains a non-zero element $u_1$, and $\left\{u_1\right\}$ is a linearly independent set. We can continue choosing elements $u_2, \dots, u_k \in S$ such that $\left\{u_1, \dots, u_k\right\}$ is an independent set, until there are no more elements that can be added, without making the set linearly dependent. Then by the replacement theorem, the process will have to terminate with a linearly independent set $\beta = \left\{u_1, \dots, u_k\right\}$, such that $k \le n$. Let $v$ be a vector in $S$. If $v \in \beta$ then $v \in \text{span}(\beta)$. If $v \notin \beta$ then $\beta \cup \left\{v\right\}$ is a linearly dependent set, so $v \in \text{span}(\beta)$. Then $S \subset \text{span}(\beta)$, and therefore $\beta$ generates $V$. Since it is also linearly independent, $\beta$ is a basis for $V$.
+	\end{proof} 
+	\pagebreak
+	\item[(b)] Prove that $S$ contains at least $n$ vectors.
+	\begin{proof}
+		If $V$ has dimension $n$, then by definition, any basis for $V$ has exactly $n$ vectors, and thus $S$ has to contain at least $n$ vectors.
+	\end{proof}
+\end{enumerate}
+
+\subsubsection*{21. Prove that a vector space is infinite-dimensional if and only if it contains an infinite linearly independent subset.}
+
 \end{document}
