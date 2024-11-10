@@ -5,6 +5,7 @@
 
 \newtheorem{theorem}{Theorem}
 
+\newtheorem*{lemma}{Lemma}
 \newtheorem*{definition}{Definition}
 \newtheorem*{corollary}{Corollary}
 
@@ -905,5 +906,23 @@ $F = \left\{
 \end{enumerate}
 
 \subsubsection*{21. Prove that a vector space is infinite-dimensional if and only if it contains an infinite linearly independent subset.}
+
+\begin{lemma}
+	If a vector space $V$ has no infinite linearly independent subset, then there exists a finite generating set for $V$.
+
+	Suppose that a vector space $V$ has no finite generating set. Then any generating set $S$ for $V$ has to be infinite. We can then create a subset $B$ of $S$, by first taking any non-zero element from $S$, and then adding each element of $S$ that can not be represented as a linear combination of all previous elements in $B$. This process can't terminate, because if it did, $B$ would be a finite generating set for $V$, contradicting our initial assumption. Then $B$ is an infinite linearly independent subset of $V$.
+\end{lemma}
+
+\begin{proof}
+	Let $V$ be a vector space, and suppose that $V$ does not contain an infinite linearly independent subset. Then there exists a finite generating set for $V$, and therefore a subset of that generating set would be a finite basis for $V$, so $V$ is finite-dimensional.
+	
+	Now suppose that $V$ contains an infinite linearly independent subset. Then if it was finite-dimensional, it would contradict the replacement theorem by containing a linearly independent subset with more elements than its dimension, so $V$ has to be infinite-dimensional.
+\end{proof}
+
+\subsubsection*{25. Let $V, W$, and $Z$ be as in exercise 21 of Section 1.2. If $V$ and $W$ are vector spaces over $F$ of dimensions $m$ and $n$, determine the dimension of $Z$.}
+
+\begin{proof}
+	The dimension of $Z$ is $m + n$. If ${\beta}_V$ and ${\beta}_W$ are a basis for $V$ and $W$ respectively, a basis $\beta$ for $Z$ could be constructed as \[\beta = \left\{(v, 0)\ |\ v \in {\beta}_v\right\} \cup \left\{(0, w)\ |\ w \in {\beta}_w \right\}\]
+\end{proof}
 
 \end{document}
